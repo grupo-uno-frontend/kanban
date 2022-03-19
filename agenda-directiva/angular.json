@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "agenda-directiva": {
+    "agenda-interactiva": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/agenda-directiva",
+            "outputPath": "dist/agenda-interactiva",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -27,7 +27,17 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              {
+                "input": "src/theme-bootstrap4-light-purple.css",
+                "bundleName": "bootstrap4-light-purple",
+                "inject": false
+              },
+              {
+                "input": "src/theme-bootstrap4-dark-purple.css",
+                "bundleName": "bootstrap4-dark-purple",
+                "inject": false
+              }
             ],
             "scripts": []
           },
@@ -68,10 +78,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "agenda-directiva:build:production"
+              "browserTarget": "agenda-interactiva:build:production"
             },
             "development": {
-              "browserTarget": "agenda-directiva:build:development"
+              "browserTarget": "agenda-interactiva:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +89,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "agenda-directiva:build"
+            "browserTarget": "agenda-interactiva:build"
           }
         },
         "test": {
@@ -102,5 +112,5 @@
       }
     }
   },
-  "defaultProject": "agenda-directiva"
+  "defaultProject": "agenda-interactiva"
 }

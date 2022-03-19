@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ThemeService } from './theme.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'agenda-directiva';
+  title = 'agenda-interactiva';
+
+  constructor(private themeService: ThemeService) {}
+
+    changeTheme(theme: string) {
+        this.themeService.switchTheme(theme);
+    }
 }
