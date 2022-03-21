@@ -39,7 +39,9 @@
                 "inject": false
               }
             ],
-            "scripts": []
+            "scripts": [
+
+            ]
           },
           "configurations": {
             "production": {

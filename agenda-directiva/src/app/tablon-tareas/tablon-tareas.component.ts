@@ -19,7 +19,7 @@ export class TablonTareasComponent implements OnInit {
 
   tareasSeleccionadas: ITarea[] = [];
 
-  draggedTarea!: ITarea;
+  draggedTarea!: ITarea | null;
 
   constructor(private tareasService: TareasService) {
 
@@ -31,33 +31,32 @@ export class TablonTareasComponent implements OnInit {
           this.tareasDisponibles = tareas;
         })
       }
- /*LO DE ARRASTRAR dragStart(event,product: Product) {
-    this.draggedProduct = product;
+ dragStart(event:any,tarea: ITarea) {
+    this.draggedTarea = tarea;
 }
 
- drop(event) {
-    if (this.draggedProduct) {
-        let draggedProductIndex = this.findIndex(this.draggedProduct);
-        this.selectedProducts = [...this.selectedProducts, this.draggedProduct];
-        this.availableProducts = this.availableProducts.filter((val,i) => i!=draggedProductIndex);
-        this.draggedProduct = null;
+ drop(event:any) {
+    if (this.draggedTarea) {
+        let draggedTareaIndex = this.findIndex(this.draggedTarea);
+        this.tareasSeleccionadas = [...this.tareasSeleccionadas, this.draggedTarea];
+        this.tareasDisponibles = this.tareasDisponibles.filter((val,i) => i!=draggedTareaIndex);
+        this.draggedTarea = null;
     }
 }
-dragEnd(event) {
-  this.draggedProduct = null;
+dragEnd(event:any) {
+  this.draggedTarea = null;
 }
 
-findIndex(product: Product) {
+findIndex(tarea: ITarea) {
   let index = -1;
-  for(let i = 0; i < this.availableProducts.length; i++) {
-      if (product.id === this.availableProducts[i].id) {
+  for(let i = 0; i < this.tareasDisponibles.length; i++) {
+      if (tarea.id === this.tareasDisponibles[i].id) {
           index = i;
           break;
       }
   }
   return index;
 }
-*/
-
 }
+
 

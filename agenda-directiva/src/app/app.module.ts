@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import {CheckboxModule} from 'primeng/checkbox';
 import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
+import {ImageModule} from 'primeng/image';
 /* import { TablonTareasComponent } from './tablon-tareas/tablon-tareas.component'; */
 
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
@@ -33,6 +34,7 @@ import FormularioTareasComponent from './formularioTareas/formulario-tareas/form
     CheckboxModule,
     InputTextModule,
     ButtonModule,
+    ImageModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth()),
