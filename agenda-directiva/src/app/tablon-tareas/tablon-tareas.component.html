@@ -19,7 +19,28 @@
         </div>
     </div>
     <div class="col-12 md:col-6 drop-column" pDroppable="products" (onDrop)="drop($event)">
-
+<!--aqui empieza la tabla-->
+      <div class="col-12 md:col-6 drop-column" pDroppable="tarea" (onDrop)="drop()">
+        <p-table [value]="tareasSeleccionadas">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Especificaciones</th>
+                    <th>Estado</th>
+                    <th>Porcentaje</th>
+                    <th>Realizado</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-tarea>
+                <tr>
+                        <td>{{tarea.nombre}}</td>
+                        <td>{{tarea.especificacion }}</td>
+                        <td>{{tarea.estado}}</td>
+                        <td>{{tarea.porcentaje}}</td>
+                        <td>{{tarea.realizado}}</td>
+                    </tr>
+                </ng-template>
+            </p-table>
     </div>
 </div>
 
