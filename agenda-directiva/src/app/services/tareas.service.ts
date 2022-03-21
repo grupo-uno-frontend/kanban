@@ -27,7 +27,4 @@ export class TareasService {
     const tareaEliminar = doc(this.firestore, `tareas/${tarea.id}`);
       return deleteDoc(tareaEliminar);}
 
-
-
-
   }
