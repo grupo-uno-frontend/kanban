@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ConfirmationService } from 'primeng/api';
 import { ITarea } from 'src/app/tablon-tareas/tarea.interface';
 
 
@@ -14,7 +15,8 @@ export default class FormularioTareasComponent implements OnInit {
   @Output() tareaModificada = new EventEmitter<ITarea>();
 
 
-  constructor() {this.tarea = {
+  constructor(private confirmationService: ConfirmationService
+    ) {this.tarea = {
       nombre: '',
       especificacion: '',
       estado: '',
@@ -26,9 +28,14 @@ export default class FormularioTareasComponent implements OnInit {
   guardarTarea() {
 
     if (this.nueva) {
+
+      this.confirmationService.confirm({
+      message: 'Tarea creada correctamente',
+      header: 'OK',
+      icon: 'pi pi-check'});
+
       this.tareaNueva.emit(this.tarea);
     } else {
       this.tareaModificada.emit(this.tarea);
     }
-  }
-}
+  }}
