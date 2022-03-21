@@ -41,7 +41,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth()),
-    DragDropModule,
+    DragDropModule
   ],
   providers: [ConfirmationService],
   bootstrap: [AppComponent]
