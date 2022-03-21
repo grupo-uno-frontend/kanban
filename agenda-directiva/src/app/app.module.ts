@@ -17,6 +17,7 @@ import { environment } from 'src/environments/environment';
 import { MantenimientoUsuariosComponent } from './usuario/mantenimiento-usuarios/mantenimiento-usuarios.component';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { TareasComponent } from './formularioTareas/tareas/tareas.component';
+import FormularioTareasComponent from './formularioTareas/formulario-tareas/formulario-tareas.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TareasComponent } from './formularioTareas/tareas/tareas.component';
     LoginComponent,
     /* TablonTareasComponent, */
     MantenimientoUsuariosComponent,
-    TareasComponent
+    TareasComponent,
+    FormularioTareasComponent
   ],
   imports: [
     BrowserModule,
