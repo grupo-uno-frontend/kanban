@@ -20,7 +20,7 @@
     </div>
     <div class="col-12 md:col-6 drop-column" pDroppable="products" (onDrop)="drop($event)">
 <!--aqui empieza la tabla-->
-      <div class="col-12 md:col-6 drop-column" pDroppable="tarea" (onDrop)="drop()">
+      <div class="col-12 md:col-6 drop-column" pDroppable="tarea" (onDrop)="drop($event)">
         <p-table [value]="tareasSeleccionadas">
             <ng-template pTemplate="header">
                 <tr>
