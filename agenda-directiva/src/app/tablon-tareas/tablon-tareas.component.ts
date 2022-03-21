@@ -56,3 +56,4 @@ findIndex(product: Product) {
 }
 
 }
+
