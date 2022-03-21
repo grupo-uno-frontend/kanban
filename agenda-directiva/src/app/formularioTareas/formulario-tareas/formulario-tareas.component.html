@@ -57,7 +57,7 @@
     />
     <p
       class="error-mensaje text-danger mt-1 ml-4"
-      *ngIf="f.controls['Estado']?.invalid && f.controls['estado']?.touched"
+      *ngIf="f.controls['estado']?.invalid && f.controls['estado']?.touched"
     >
       Estado erróneo
     </p>
@@ -71,14 +71,13 @@
       [(ngModel)]="tarea.realizado"
     />
   </div>
-  <button
+  <p-button
     type="submit"
     (click)="guardarTarea()"
-    class="btn btn-primary mt-2"
     [disabled]="f.invalid"
   >
     {{ nueva == true ? "Agregar nueva tarea" : "Actualizar" }}
-  </button>
+  </p-button>
 </form>
 <p-confirmDialog
   [style]="{ width: '50vw' }"
