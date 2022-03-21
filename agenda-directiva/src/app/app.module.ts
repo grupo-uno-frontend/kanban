@@ -27,6 +27,7 @@ import { environment } from 'src/environments/environment';
     ButtonModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideFirestore(() => getFirestore()),
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]
