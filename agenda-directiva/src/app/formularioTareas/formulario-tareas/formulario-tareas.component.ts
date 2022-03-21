@@ -32,11 +32,10 @@ export default class FormularioTareasComponent implements OnInit {
       this.confirmationService.confirm({
       message: 'Tarea creada correctamente',
       header: 'OK',
-      icon: 'pi pi-check'
-    });
+      icon: 'pi pi-check'});
 
       this.tareaNueva.emit(this.tarea);
     } else {
       this.tareaModificada.emit(this.tarea);
     }
-  }
+  }}
