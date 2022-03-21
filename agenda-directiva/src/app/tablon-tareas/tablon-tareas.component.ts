@@ -19,7 +19,7 @@ export class TablonTareasComponent implements OnInit {
 
   tareasSeleccionadas: ITarea[] = [];
 
-  draggedTarea!: ITarea;
+  draggedTarea!: ITarea | null;
 
   constructor(private tareasService: TareasService) {
 
@@ -31,11 +31,11 @@ export class TablonTareasComponent implements OnInit {
           this.tareasDisponibles = tareas;
         })
       }
- dragStart(event,tarea: ITarea) {
+ dragStart(event:any,tarea: ITarea) {
     this.draggedTarea = tarea;
 }
 
- drop(event) {
+ drop(event:any) {
     if (this.draggedTarea) {
         let draggedTareaIndex = this.findIndex(this.draggedTarea);
         this.tareasSeleccionadas = [...this.tareasSeleccionadas, this.draggedTarea];
@@ -43,7 +43,7 @@ export class TablonTareasComponent implements OnInit {
         this.draggedTarea = null;
     }
 }
-dragEnd(event) {
+dragEnd(event:any) {
   this.draggedTarea = null;
 }
 
@@ -58,4 +58,5 @@ findIndex(tarea: ITarea) {
   return index;
 }
 }
+
 
