@@ -15,19 +15,19 @@ export class TablonTareasComponent implements OnInit {
     porcentaje: 0,
     realizado: false,
   }
-  tareasDisponibles: tarea[];
+  tareasDisponibles: ITarea[] = [];
 
-  selectedProducts: Product[];
+  tareasSeleccionadas: ITarea[] = [];
 
-  draggedProduct: Product;
+  draggedTarea!: ITarea;
 
   constructor(private tareasService: TareasService) {
 
   }
 
   ngOnInit(): void {
-    this.selectedProducts = [];
-        this.productService.getProductsSmall().then(products => this.availableProducts = products);
+    this.tareasSeleccionadas = [];
+        this.tareasService.getProductsSmall().then((tareas: ITarea[]) => this.tareasDisponibles = tareas);
   }
   dragStart(event,product: Product) {
     this.draggedProduct = product;
