@@ -17,7 +17,6 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 import { MantenimientoUsuariosComponent } from './usuario/mantenimiento-usuarios/mantenimiento-usuarios.component';
 import { getAuth, provideAuth } from '@angular/fire/auth';
-import { TareasComponent } from './formularioTareas/tareas/tareas.component';
 import FormularioTareasComponent from './formularioTareas/formulario-tareas/formulario-tareas.component';
 
 @NgModule({
@@ -26,7 +25,6 @@ import FormularioTareasComponent from './formularioTareas/formulario-tareas/form
     LoginComponent,
     TablonTareasComponent,
     MantenimientoUsuariosComponent,
-    TareasComponent,
     FormularioTareasComponent
   ],
   imports: [
