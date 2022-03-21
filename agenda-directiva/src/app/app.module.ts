@@ -8,6 +8,10 @@ import {CheckboxModule} from 'primeng/checkbox';
 import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
 
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { environment } from 'src/environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +21,9 @@ import {ButtonModule} from 'primeng/button';
     BrowserModule,
     CheckboxModule,
     InputTextModule,
-    ButtonModule
+    ButtonModule,
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    provideFirestore(() => getFirestore()),
   ],
   providers: [],
   bootstrap: [AppComponent]
