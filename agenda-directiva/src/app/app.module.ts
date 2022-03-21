@@ -37,6 +37,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
     InputTextModule,
     ButtonModule,
     ImageModule,
+    FormsModule,
     ConfirmDialogModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideFirestore(() => getFirestore()),
