@@ -37,9 +37,12 @@
                 "input": "src/theme-bootstrap4-dark-purple.css",
                 "bundleName": "bootstrap4-dark-purple",
                 "inject": false
-              }
+              },
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
