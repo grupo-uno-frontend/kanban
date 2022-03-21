@@ -27,13 +27,13 @@ export class TablonTareasComponent implements OnInit {
 
   ngOnInit(): void {
     this.tareasSeleccionadas = [];
-        this.tareasService.getProductsSmall().then((tareas: ITarea[]) => this.tareasDisponibles = tareas);
+        this.tareasService.getTareas().then((tareas: ITarea[]) => this.tareasDisponibles = tareas);
   }
-  dragStart(event,product: Product) {
-    this.draggedProduct = product;
-}
+ //LO DE ARRASTRAR dragStart(event,product: Product) {
+ //   this.draggedProduct = product;
+//}
 
-drop(event) {
+/* drop(event) {
     if (this.draggedProduct) {
         let draggedProductIndex = this.findIndex(this.draggedProduct);
         this.selectedProducts = [...this.selectedProducts, this.draggedProduct];
@@ -55,6 +55,7 @@ findIndex(product: Product) {
   }
   return index;
 }
+*/
 
 }
 
