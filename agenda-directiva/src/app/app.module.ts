@@ -17,8 +17,11 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 import { MantenimientoUsuariosComponent } from './usuario/mantenimiento-usuarios/mantenimiento-usuarios.component';
 import { getAuth, provideAuth } from '@angular/fire/auth';
-import { TareasComponent } from './formularioTareas/tareas/tareas.component';
 import FormularioTareasComponent from './formularioTareas/formulario-tareas/formulario-tareas.component';
+import { FormsModule } from '@angular/forms';
+import { ConfirmationService } from 'primeng/api';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +29,6 @@ import FormularioTareasComponent from './formularioTareas/formulario-tareas/form
     LoginComponent,
     /* TablonTareasComponent, */
     MantenimientoUsuariosComponent,
-    TareasComponent,
     FormularioTareasComponent
   ],
   imports: [
@@ -35,12 +37,14 @@ import FormularioTareasComponent from './formularioTareas/formulario-tareas/form
     InputTextModule,
     ButtonModule,
     ImageModule,
+    ConfirmDialogModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth()),
-    DragDropModule
+    DragDropModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [ConfirmationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
