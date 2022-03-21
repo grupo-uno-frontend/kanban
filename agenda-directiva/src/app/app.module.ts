@@ -13,12 +13,14 @@ import { TablonTareasComponent } from './tablon-tareas/tablon-tareas.component';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
+import { MantenimientoUsuariosComponent } from './usuario/mantenimiento-usuarios/mantenimiento-usuarios.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    TablonTareasComponent
+    TablonTareasComponent,
+    MantenimientoUsuariosComponent
   ],
   imports: [
     BrowserModule,
