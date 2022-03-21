@@ -1,13 +1,13 @@
-<!-- Drag and Drop to Table
+ Drag and Drop to Table
 <div class="grid">
     <div class="col-12 md:col-6 drag-column">
-        <div *ngFor="let protareaduct of availableProducts">
-            <div class="product-item" pDraggable="products" (onDragStart)="dragStart(product)" (onDragEnd)="dragEnd()">
+        <div *ngFor="let tarea of tareasDisponibles">
+            <div class="product-item" pDraggable="products" (onDragStart)="dragStart(tarea)" (onDragEnd)="dragEnd()">
                 <div class="image-container">
-                        <img src="assets/showcase/images/demo/product/{{product.image}}" [alt]="product.name" class="product-image" />
+                        {{ tarea.nombre }}
                 </div>
                 <div class="product-list-detail">
-                    <h5 class="mb-2">{{product.name}}</h5>
+                    <h5 class="mb-2">{{tarea.name}}</h5>
                     <i class="pi pi-tag product-category-icon"></i>
                     <span class="product-category">{{product.category}}</span>
                 </div>
@@ -40,4 +40,4 @@
     </div>
 </div>
 
- -->
+
