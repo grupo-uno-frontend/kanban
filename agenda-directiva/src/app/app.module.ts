@@ -8,11 +8,13 @@ import { LoginComponent } from './login/login.component';
 import {CheckboxModule} from 'primeng/checkbox';
 import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
+import { TablonTareasComponent } from './tablon-tareas/tablon-tareas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    TablonTareasComponent
   ],
   imports: [
     BrowserModule,
