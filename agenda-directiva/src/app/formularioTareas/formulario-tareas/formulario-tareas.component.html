@@ -1,4 +1,4 @@
-<h1>{{ nueva == true ? 'Agregar tarea' : 'Modificar tarea' }}Creación de tarea</h1>
+<h1>{{ nueva == true ? "Agregar tarea" : "Modificar tarea" }}</h1>
 <form #f="ngForm">
   <div class="form-group">
     <label>Nombre</label>
@@ -8,7 +8,9 @@
       name="nombre"
       [(ngModel)]="tarea.nombre"
       required
-      [class.error]="f.controls['nombre']?.invalid && f.controls['nombre']?.touched"
+      [class.error]="
+        f.controls['nombre']?.invalid && f.controls['nombre']?.touched
+      "
     />
     <p
       class="error-mensaje text-danger mt-1 ml-4"
@@ -25,11 +27,17 @@
       name="especificacion"
       [(ngModel)]="tarea.especificacion"
       required
-      [class.error]="f.controls['especificacion']?.invalid && f.controls['especificacion']?.touched"
+      [class.error]="
+        f.controls['especificacion']?.invalid &&
+        f.controls['especificacion']?.touched
+      "
     />
     <p
       class="error-mensaje text-danger mt-1 ml-4"
-      *ngIf="f.controls['especificacion']?.invalid && f.controls['especificacion']?.touched"
+      *ngIf="
+        f.controls['especificacion']?.invalid &&
+        f.controls['especificacion']?.touched
+      "
     >
       Especificación obligatoria
     </p>
@@ -43,18 +51,33 @@
       [(ngModel)]="tarea.estado"
       pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
       required
-      [class.error]="f.controls['estado']?.invalid && f.controls['estado']?.touched"
+      [class.error]="
+        f.controls['estado']?.invalid && f.controls['estado']?.touched
+      "
     />
-    <p class="error-mensaje text-danger mt-1 ml-4" *ngIf="f.controls['Estado']?.invalid && f.controls['estado']?.touched">
+    <p
+      class="error-mensaje text-danger mt-1 ml-4"
+      *ngIf="f.controls['Estado']?.invalid && f.controls['estado']?.touched"
+    >
       Estado erróneo
     </p>
   </div>
   <div class="form-check mt-2">
     <label class="form-check-label" for="flexCheckDefault"> Realizado </label>
-    <input class="form-check-input" type="checkbox" name="realizado" [(ngModel)]="tarea.realizado" />
+    <input
+      class="form-check-input"
+      type="checkbox"
+      name="realizado"
+      [(ngModel)]="tarea.realizado"
+    />
   </div>
-  <button type="submit" (click)="guardarTarea()" class="btn btn-primary mt-2" [disabled]="f.invalid">
-    {{ nueva == true ? 'Agregar nueva tarea' : 'Actualizar' }}
+  <button
+    type="submit"
+    (click)="guardarTarea()"
+    class="btn btn-primary mt-2"
+    [disabled]="f.invalid"
+  >
+    {{ nueva == true ? "Agregar nueva tarea" : "Actualizar" }}
   </button>
 </form>
 <p-confirmDialog
@@ -63,5 +86,5 @@
   acceptButtonStyleClass="p-button-primary"
   [rejectVisible]="false"
   acceptLabel="Aceptar"
-></p-confirmDialog><!--PAra que aparezca el alerta-->
-
+></p-confirmDialog
+><!--PAra que aparezca el alerta-->
