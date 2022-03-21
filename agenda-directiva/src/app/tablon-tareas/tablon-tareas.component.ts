@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TareasService } from '../services/tareas.service';
 import { ITarea } from './tarea.interface';
 
 @Component({
@@ -20,7 +21,7 @@ export class TablonTareasComponent implements OnInit {
 
   draggedProduct: Product;
 
-  constructor(private productService: ProductService) {
+  constructor(private tareasService: TareasService) {
 
   }
 
