@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+/* import { Component, OnInit } from '@angular/core';
 import { TareasService } from '../services/tareas.service';
 import { ITarea } from './tarea.interface';
 
@@ -58,3 +58,4 @@ findIndex(product: Product) {
 
 }
 
+ */
