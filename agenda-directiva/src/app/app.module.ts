@@ -1,7 +1,7 @@
 import { Input, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {DragDropModule} from 'primeng/dragdrop';
-
+import {TableModule} from 'primeng/table';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -10,7 +10,7 @@ import {CheckboxModule} from 'primeng/checkbox';
 import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
 import {ImageModule} from 'primeng/image';
-/* import { TablonTareasComponent } from './tablon-tareas/tablon-tareas.component'; */
+import { TablonTareasComponent } from './tablon-tareas/tablon-tareas.component';
 
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
@@ -27,7 +27,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
   declarations: [
     AppComponent,
     LoginComponent,
-    /* TablonTareasComponent, */
+    TablonTareasComponent,
     MantenimientoUsuariosComponent,
     FormularioTareasComponent
   ],
@@ -42,7 +42,11 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
     provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth()),
     DragDropModule,
+<<<<<<< HEAD
     FormsModule
+=======
+    TableModule
+>>>>>>> a1de29a15825a31aecb80a4e4e7009b5da3bc1b7
   ],
   providers: [ConfirmationService],
   bootstrap: [AppComponent]

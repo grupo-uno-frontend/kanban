@@ -38,6 +38,5 @@ export default class FormularioTareasComponent implements OnInit {
       this.tareaNueva.emit(this.tarea);
     } else {
       this.tareaModificada.emit(this.tarea);
-    }}
-
+    }
   }

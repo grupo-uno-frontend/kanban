@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TareasService } from '../services/tareas.service';
 import { ITarea } from './tarea.interface';
+import { TableModule } from 'primeng/table';
 
 @Component({
   selector: 'app-tablon-tareas',
