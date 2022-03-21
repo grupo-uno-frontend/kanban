@@ -27,7 +27,7 @@ export class TablonTareasComponent implements OnInit {
 
   ngOnInit(): void {
     this.tareasSeleccionadas = [];
-        this.tareasService.getProductsSmall().then(products => this.availableProducts = products);
+        this.tareasService.getProductsSmall().then((tareas: ITarea[]) => this.tareasDisponibles = tareas);
   }
   dragStart(event,product: Product) {
     this.draggedProduct = product;
