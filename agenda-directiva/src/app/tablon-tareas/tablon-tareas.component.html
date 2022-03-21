@@ -7,36 +7,19 @@
                         {{ tarea.nombre }}
                 </div>
                 <div class="product-list-detail">
-                    <h5 class="mb-2">{{tarea.name}}</h5>
+                    <h5 class="mb-2">{{tarea.especificacion}}</h5>
                     <i class="pi pi-tag product-category-icon"></i>
-                    <span class="product-category">{{product.category}}</span>
+                    <span class="product-category">{{tarea.estado}}</span>
                 </div>
                 <div class="product-list-action">
-                    <h6 class="mb-2">${{product.price}}</h6>
-                    <span class="'product-badge status-'{{product.inventoryStatus.toLowerCase()}}">{{product.inventoryStatus}}</span>
+                    <h6 class="mb-2">${{tarea.porcentaje}}</h6>
+                    <span class="'product-badge status-'{{tarea.realizado}}">{{tarea.realizado}}</span>
                 </div>
             </div>
         </div>
     </div>
     <div class="col-12 md:col-6 drop-column" pDroppable="products" (onDrop)="drop()">
-    <p-table [value]="selectedProducts">
-        <ng-template pTemplate="header">
-            <tr>
-                <th>ID</th>
-                <th>Category</th>
-                <th>Name</th>
-                <th>Price</th>
-            </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-product>
-            <tr>
-                    <td>{{product.id}}</td>
-                    <td>{{product.category}}</td>
-                    <td>{{product.name}}</td>
-                    <td>{{product.price}}</td>
-                </tr>
-            </ng-template>
-        </p-table>
+
     </div>
 </div>
 
