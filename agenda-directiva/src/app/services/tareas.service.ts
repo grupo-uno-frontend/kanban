@@ -27,7 +27,12 @@ export class TareasService {
     const tareaEliminar = doc(this.firestore, `tareas/${tarea.id}`);
       return deleteDoc(tareaEliminar);}
 
-
+      getTareasSmall() {
+        return this.http.get<any>(Observable<ITarea[])
+        .toPromise()
+        .then(res => <Tarea[]>res.data)
+        .then(data => { return data; });
+    }
 
 
   }

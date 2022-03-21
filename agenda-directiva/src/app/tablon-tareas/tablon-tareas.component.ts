@@ -1,4 +1,4 @@
-/* import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TareasService } from '../services/tareas.service';
 import { ITarea } from './tarea.interface';
 
@@ -27,13 +27,13 @@ export class TablonTareasComponent implements OnInit {
 
   ngOnInit(): void {
     this.tareasSeleccionadas = [];
-        this.tareasService.getTareas().then((tareas: ITarea[]) => this.tareasDisponibles = tareas);
+        this.tareasService.getTareasSmall().then((tarea: ITarea[]) => this.tareasDisponibles = tarea);
   }
- //LO DE ARRASTRAR dragStart(event,product: Product) {
- //   this.draggedProduct = product;
-//}
+ /*LO DE ARRASTRAR dragStart(event,product: Product) {
+    this.draggedProduct = product;
+}
 
-/* drop(event) {
+ drop(event) {
     if (this.draggedProduct) {
         let draggedProductIndex = this.findIndex(this.draggedProduct);
         this.selectedProducts = [...this.selectedProducts, this.draggedProduct];
@@ -59,4 +59,3 @@ findIndex(product: Product) {
 
 }
 
- */
