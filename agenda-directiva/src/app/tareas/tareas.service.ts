@@ -8,11 +8,17 @@ import { ITarea } from '../tablon-tareas/tarea.interface';
   providedIn: 'root'
 })
 export class TareasService {
-  firestore: any;
 
-  constructor(firestore: Firestore) { }
+  constructor(private firestore: Firestore) { }
   getTareas(): Observable<ITarea[]> {
     const tareas = collection(this.firestore, 'tareas');
     const realizadas = query(tareas, orderBy('fechaHora', 'desc'), limit(20));
-    return collectionData(realizadas, { idField: 'id' }) as Observable<ITarea[]>;
-}
+    return collectionData(realizadas, { idField: 'id' }) as Observable<ITarea[]>;}
+
+
+
+
+
+
+
+  }
