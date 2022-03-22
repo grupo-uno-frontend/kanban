@@ -25,6 +25,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app.routing.module';
 import {DialogModule} from 'primeng/dialog';
 
+import {SplitterModule} from 'primeng/splitter';
+
+
 
 
 @NgModule({
@@ -51,6 +54,7 @@ import {DialogModule} from 'primeng/dialog';
     DragDropModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    SplitterModule
   ],
   providers: [ConfirmationService],
   bootstrap: [AppComponent]
