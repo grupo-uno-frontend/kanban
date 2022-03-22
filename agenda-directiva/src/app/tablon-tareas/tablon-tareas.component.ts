@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Auth } from '@angular/fire/auth';
+import { Auth, User } from '@angular/fire/auth';
+import { Router } from '@angular/router';
 
 import { ConfirmationService } from 'primeng/api';
 import { TareasService } from '../services/tareas.service';
@@ -11,6 +12,7 @@ import { ITarea } from './tarea.interface';
   styleUrls: ['./tablon-tareas.component.css']
 })
 export class TablonTareasComponent implements OnInit {
+  usuario!: User;
   tarea: ITarea = {
     nombre: '',
     especificacion: '',
@@ -27,11 +29,15 @@ export class TablonTareasComponent implements OnInit {
 
   draggedTarea!: ITarea | null;
 
-  constructor(private tareasService: TareasService, private confirmationService: ConfirmationService, private fireAuth: Auth) {
+  constructor(private tareasService: TareasService, private confirmationService: ConfirmationService, private fireAuth: Auth, private router: Router) {
 
   }
 
   ngOnInit(): void {
+    this.usuario = this.fireAuth.currentUser!;
+    if (!this.usuario) {
+      this.router.navigateByUrl('login');
+    }
     this.tareasSeleccionadas = [];
         this.tareasService.getTareas().subscribe((tareas:ITarea[])=>{
           console.log(tareas);
