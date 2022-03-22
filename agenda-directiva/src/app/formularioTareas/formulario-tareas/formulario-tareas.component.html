@@ -4,7 +4,7 @@
     <span>Nombre</span>
     <input
       type="text"
-      class="form-control"
+      class="my-2"
       name="nombre"
       [(ngModel)]="tarea.nombre"
       required
@@ -24,7 +24,7 @@
     <span>Especificación</span>
     <input
       type="text"
-      class="form-control"
+      class="my-2"
       name="especificacion"
       [(ngModel)]="tarea.especificacion"
       required
@@ -48,7 +48,7 @@
     <span>Estado</span>
     <input
       type="text"
-      class="form-control"
+      class="my-2"
       name="estado"
       [(ngModel)]="tarea.estado"
       required
@@ -68,6 +68,7 @@
     <span for="check"> Realizado </span>
     <p-checkbox [binary]="true" [(ngModel)]="tarea.realizado" id="check" name="realizado"></p-checkbox>
   </div>
+  <div class="col-12 md:col-4">
   <p-button
     type="submit"
     (click)="guardarTarea()"
@@ -75,6 +76,7 @@
   >
     {{ nueva == true ? "Agregar nueva tarea" : "Actualizar" }}
   </p-button>
+</div>
 </form>
 <p-confirmDialog
   [style]="{ width: '50vw' }"
