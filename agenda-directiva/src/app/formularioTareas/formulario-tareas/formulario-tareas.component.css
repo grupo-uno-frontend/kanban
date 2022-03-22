@@ -3,5 +3,6 @@
 }
 
 .error-mensaje {
-  font-size: x-small;
+  font-size: small;
+  margin-left: 0 !important;
 }
