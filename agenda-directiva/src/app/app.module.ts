@@ -23,6 +23,7 @@ import { TablonTareasComponent } from './tablon-tareas/tablon-tareas.component';
 import FormularioTareasComponent from './formularioTareas/formulario-tareas/formulario-tareas.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app.routing.module';
+import {DialogModule} from 'primeng/dialog';
 
 
 
@@ -40,6 +41,7 @@ import { AppRoutingModule } from './app.routing.module';
     InputTextModule,
     ButtonModule,
     ImageModule,
+    DialogModule,
     FormsModule,
     TableModule,//borrar si no se utiliza
     ConfirmDialogModule,
