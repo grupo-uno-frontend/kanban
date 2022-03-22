@@ -21,9 +21,9 @@
             </div>
         </div>
     </div>
-    <div class="col-12 md:col-6 drop-column" pDroppable="products" (onDrop)="drop($event)">
+    <div class="col-12 md:col-6 drop-column" pDraggable="tarea" pDroppable="tarea" (onDrop)="drop($event) ">
 <!--aqui empieza la tabla-->
-      <div class="col-12 md:col-6 drop-column" pDroppable="tarea" (onDrop)="drop($event)">
+      <div class="col-12 md:col-6 drop-column" pDraggable="tarea" pDroppable="tarea" (onDrop)="drop($event)">
         <p-table [value]="tareasSeleccionadas">
             <ng-template pTemplate="header">
                 <tr>
@@ -46,4 +46,15 @@
             </p-table>
     </div>
 </div>
+<p-dialog header="Title" [(visible)]="display" [style]="{width: '50vw'}">
+  <app-formulario-tareas
+      [tarea]="tarea"
+      [nueva]="nueva"
+      (tareaNueva)="agregarTareaFirebase($event)"
+      (tareaModificada)="modificarTareaFirebase($event)"
+    ></app-formulario-tareas>
+</p-dialog>
+
+
+
 
