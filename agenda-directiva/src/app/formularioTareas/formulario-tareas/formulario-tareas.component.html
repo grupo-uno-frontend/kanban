@@ -74,7 +74,12 @@
     ></p-checkbox>
   </div>
   <div class="col-12 md:col-4">
-    <p-button type="submit" (click)="guardarTarea()" [disabled]="f.invalid">
+    <p-button
+      class="justify-content-end"
+      type="submit"
+      (click)="guardarTarea()"
+      [disabled]="f.invalid"
+    >
       {{ nueva == true ? "Aceptar" : "Actualizar" }}
     </p-button>
   </div>
