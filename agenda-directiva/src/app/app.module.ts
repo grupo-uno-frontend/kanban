@@ -42,7 +42,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
     provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth()),
     DragDropModule,
-    FormsModule
+    FormsModule,
     TableModule
   ],
   providers: [ConfirmationService],
