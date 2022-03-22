@@ -1,7 +1,7 @@
 import { Input, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {DragDropModule} from 'primeng/dragdrop';
-import {TableModule} from 'primeng/table';
+import {CardModule} from 'primeng/card';
 import {SplitterModule} from 'primeng/splitter';
 
 import { AppComponent } from './app.component';
@@ -45,7 +45,7 @@ import {DialogModule} from 'primeng/dialog';
     ImageModule,
     DialogModule,
     FormsModule,
-    TableModule,//borrar si no se utiliza
+    CardModule,
     ConfirmDialogModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideFirestore(() => getFirestore()),
