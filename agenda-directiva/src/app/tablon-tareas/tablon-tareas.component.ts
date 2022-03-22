@@ -3,7 +3,6 @@ import { Auth, User } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 
 import { ConfirmationService } from 'primeng/api';
-import { HasEventTargetAddRemove } from 'rxjs/internal/observable/fromEvent';
 import { TareasService } from '../services/tareas.service';
 import { ITarea } from './tarea.interface';
 

@@ -2,10 +2,10 @@
 
 <app-formulario-tareas [nueva]="nueva" [tarea]="tarea" (tareaNueva)="agregarTarea($event)" (tareaModificada)="modificarTarea($event)"></app-formulario-tareas>
 
-<div class="grid">
+< class="grid">
     <div class="col-12 md:col-6 drag-column">
         <div *ngFor="let tarea of tareasDisponibles">
-            <div class="product-item" pDraggable="products" (onDragStart)="dragStart($event, tarea)" (onDragEnd)="dragEnd($event)">
+            <div class="product-item" pDraggable="tarea" (onDragStart)="dragStart($event, tarea)" (onDragEnd)="dragEnd($event)">
                 <div class="image-container">
                         {{ tarea.nombre }}
                 </div>
@@ -21,9 +21,8 @@
             </div>
         </div>
     </div>
-    <div class="col-12 md:col-6 drop-column" pDraggable="tarea" pDroppable="tarea" (onDrop)="drop($event) ">
 <!--aqui empieza la tabla-->
-      <div class="col-12 md:col-6 drop-column" pDraggable="tarea" pDroppable="tarea" (onDrop)="drop($event)">
+      <div class="col-12 md:col-6 drop-column"  pDraggable="tarea" pDroppable="tarea" (onDrop)="drop($event)">
         <p-table [value]="tareasSeleccionadas">
             <ng-template pTemplate="header">
                 <tr>
@@ -45,7 +44,6 @@
                 </ng-template>
             </p-table>
     </div>
-</div>
 <p-dialog header="Title" [(visible)]="display" [style]="{width: '50vw'}">
   <app-formulario-tareas
       [tarea]="tarea"
