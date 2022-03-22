@@ -94,7 +94,7 @@ agregarTareaFirebase(tarea: ITarea){
 console.log(tarea);
 tarea.usuario = this.usuario.displayName;
 this.tareasService.addTarea(tarea);
-
+this.display=false; //para quitar la pantalla modal
 }
 modificarTareaFirebase(tarea: ITarea){
 
