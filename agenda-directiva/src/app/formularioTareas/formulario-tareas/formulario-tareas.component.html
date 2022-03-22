@@ -73,8 +73,12 @@
       name="realizado"
     ></p-checkbox>
   </div>
-  <div class="col-12 md:col-4">
-    <p-button (click)="guardarTarea()" [disabled]="f.invalid">
+  <div id="botonAceptar" class="col-12 md:col-4">
+    <p-button
+      class="text-center"
+      (click)="guardarTarea()"
+      [disabled]="f.invalid"
+    >
       {{ nueva == true ? "Aceptar" : "Actualizar" }}
     </p-button>
   </div>
