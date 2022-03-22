@@ -10,7 +10,6 @@ import {CheckboxModule} from 'primeng/checkbox';
 import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
 import {ImageModule} from 'primeng/image';
-import { TablonTareasComponent } from './tablon-tareas/tablon-tareas.component';
 
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
@@ -21,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 import { ConfirmationService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import FormularioTareasComponent from './formularioTareas/formulario-tareas/formulario-tareas.component';
+import { TablonTareasComponent } from './tablon-tareas/tablon-tareas.component';
 
 
 @NgModule({

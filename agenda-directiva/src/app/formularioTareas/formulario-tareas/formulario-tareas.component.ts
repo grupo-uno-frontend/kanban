@@ -29,10 +29,7 @@ export default class FormularioTareasComponent implements OnInit {
 
     if (this.nueva) {
 
-      this.confirmationService.confirm({
-      message: 'Tarea creada correctamente',
-      header: 'OK',
-      icon: 'pi pi-check'});
+
 
       this.tareaNueva.emit(this.tarea);
     } else {

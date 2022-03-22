@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Auth } from 'firebase/auth';
+import { ConfirmationService } from 'primeng/api';
 import { TareasService } from '../services/tareas.service';
 import { ITarea } from './tarea.interface';
 
@@ -15,13 +17,16 @@ export class TablonTareasComponent implements OnInit {
     porcentaje: 0,
     realizado: false,
   }
+
+  nueva: boolean = true;
+
   tareasDisponibles: ITarea[] = [];
 
   tareasSeleccionadas: ITarea[] = [];
 
   draggedTarea!: ITarea | null;
 
-  constructor(private tareasService: TareasService) {
+  constructor(private tareasService: TareasService, private confirmationService: ConfirmationService, private fireAuth: Auth) {
 
   }
 
@@ -45,6 +50,15 @@ export class TablonTareasComponent implements OnInit {
 }
 dragEnd(event:any) {
   this.draggedTarea = null;
+}
+
+async agregarTarea(tarea: ITarea) {
+  tarea.usuario=this.fireAuth.currentUser.email
+  await this.tareasService.addTarea(tarea)
+  this.confirmationService.confirm({
+    message: 'Tarea creada correctamente',
+    header: 'OK',
+    icon: 'pi pi-check'});
 }
 
 findIndex(tarea: ITarea) {

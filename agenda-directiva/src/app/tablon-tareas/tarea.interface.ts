@@ -6,4 +6,5 @@ export interface ITarea {
   estado: string;
   porcentaje: number;
   realizado: boolean;
+  usuario?: string;
 }
