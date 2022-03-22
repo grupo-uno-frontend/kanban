@@ -26,7 +26,7 @@ export class TablonTareasComponent implements OnInit {
 
   tareasDisponibles: ITarea[] = [];
 
-  tareasSeleccionadas: ITarea[] = [];
+  tareasFinalizadas: ITarea[] = [];
 
   draggedTarea!: ITarea | null;
 
@@ -38,13 +38,18 @@ export class TablonTareasComponent implements OnInit {
 
   ngOnInit(): void {
     this.usuario = this.fireAuth.currentUser!;
-    if (!this.usuario) {
+    /* if (!this.usuario) {
       this.router.navigateByUrl('login');
-    }
-    this.tareasSeleccionadas = [];
-        this.tareasService.getTareas().subscribe((tareas:ITarea[])=>{
+    } */
+    this.tareasDisponibles = [];
+        this.tareasService.getTareas(this.usuario.displayName).subscribe((tareas:ITarea[])=>{
           console.log(tareas);
           this.tareasDisponibles = tareas;
+        })
+        this.tareasFinalizadas = [];
+        this.tareasService.getTareasFinalizadas(this.usuario.displayName).subscribe((tareas:ITarea[])=>{
+          console.log(tareas);
+          this.tareasFinalizadas = tareas;
         })
       }
  dragStart(event:any,tarea: ITarea) {
@@ -53,9 +58,12 @@ export class TablonTareasComponent implements OnInit {
 
  drop(event:any) {
     if (this.draggedTarea) {
-        let draggedTareaIndex = this.findIndex(this.draggedTarea);
-        this.tareasSeleccionadas = [...this.tareasSeleccionadas, this.draggedTarea];
+        /* let draggedTareaIndex = this.findIndex(this.draggedTarea);
+        this.tareasFinalizadas = [...this.tareasFinalizadas, this.draggedTarea];
         this.tareasDisponibles = this.tareasDisponibles.filter((val,i) => i!=draggedTareaIndex);
+        this.draggedTarea = null; */
+        this.draggedTarea.realizado = true;
+        this.tareasService.updateTarea(this.draggedTarea);
         this.draggedTarea = null;
     }
 }

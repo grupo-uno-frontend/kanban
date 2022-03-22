@@ -28,6 +28,9 @@ import {DialogModule} from 'primeng/dialog';
 
 
 
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,6 +56,7 @@ import {DialogModule} from 'primeng/dialog';
     DragDropModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    SplitterModule
   ],
   providers: [ConfirmationService],
   bootstrap: [AppComponent]
