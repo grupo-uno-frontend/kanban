@@ -2,7 +2,7 @@
 
 <app-formulario-tareas [nueva]="nueva" [tarea]="tarea" (tareaNueva)="agregarTarea($event)" (tareaModificada)="modificarTarea($event)"></app-formulario-tareas>
 
-< class="grid">
+
     <div class="col-12 md:col-6 drag-column">
         <div *ngFor="let tarea of tareasDisponibles">
             <div class="product-item" pDraggable="tarea" (onDragStart)="dragStart($event, tarea)" (onDragEnd)="dragEnd($event)">
