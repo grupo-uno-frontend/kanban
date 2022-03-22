@@ -1,4 +1,4 @@
-<h1>{{ nueva == true ? "Agregar tarea" : "Modificar tarea" }}</h1>
+<h2>{{ nueva == true ? "Agregar tarea" : "Modificar tarea" }}</h2>
 <form #f="ngForm">
   <div class="form-group">
     <label>Nombre</label>
@@ -11,6 +11,7 @@
       [class.error]="
         f.controls['nombre']?.invalid && f.controls['nombre']?.touched
       "
+      pInputText
     />
     <p
       class="error-mensaje text-danger mt-1 ml-4"
@@ -31,6 +32,7 @@
         f.controls['especificacion']?.invalid &&
         f.controls['especificacion']?.touched
       "
+      pInputText
     />
     <p
       class="error-mensaje text-danger mt-1 ml-4"
@@ -53,6 +55,7 @@
       [class.error]="
         f.controls['estado']?.invalid && f.controls['estado']?.touched
       "
+      pInputText
     />
     <p
       class="error-mensaje text-danger mt-1 ml-4"
