@@ -40,7 +40,7 @@
       (onDrop)="drop($event)"
     >
       <h2>Tareas finalizadas</h2>
-      <p-table [value]="tareasFinalizadas">
+      <p-card>
         <ng-template pTemplate="header">
           <tr>
             <th>Nombre</th>
@@ -59,7 +59,7 @@
             <td>{{ tarea.realizado }}</td>
           </tr>
         </ng-template>
-      </p-table>
+      </p-card>
     </div>
     <p-dialog
       header="Agregar tarea"
