@@ -2,6 +2,7 @@ import { Input, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {DragDropModule} from 'primeng/dragdrop';
 import {TableModule} from 'primeng/table';
+import {SplitterModule} from 'primeng/splitter';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -40,6 +41,7 @@ import {SplitterModule} from 'primeng/splitter';
   ],
   imports: [
     BrowserModule,
+    SplitterModule,
     CheckboxModule,
     InputTextModule,
     ButtonModule,
