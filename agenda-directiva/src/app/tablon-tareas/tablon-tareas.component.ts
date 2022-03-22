@@ -3,6 +3,7 @@ import { Auth, User } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 
 import { ConfirmationService } from 'primeng/api';
+import { HasEventTargetAddRemove } from 'rxjs/internal/observable/fromEvent';
 import { TareasService } from '../services/tareas.service';
 import { ITarea } from './tarea.interface';
 
@@ -21,6 +22,7 @@ export class TablonTareasComponent implements OnInit {
     realizado: false,
   }
 
+
   nueva: boolean = true;
 
   tareasDisponibles: ITarea[] = [];
@@ -28,6 +30,8 @@ export class TablonTareasComponent implements OnInit {
   tareasSeleccionadas: ITarea[] = [];
 
   draggedTarea!: ITarea | null;
+
+  display: boolean = false;
 
   constructor(private tareasService: TareasService, private confirmationService: ConfirmationService, private fireAuth: Auth, private router: Router) {
 
@@ -81,6 +85,19 @@ findIndex(tarea: ITarea) {
   }
   return index;
 }
+
+showDialog() {
+    this.display = true;
+}
+
+//DAR FUNCIONALIDAD PARA QUE COJA LAS TAREAS Y LAS AGRUEGUE/MODIFIQUE
+agregarTareaFirebase(tarea: ITarea){
+
+
+}
+modificarTareaFirebase(tarea: ITarea){
+
 }
 
 
+}
