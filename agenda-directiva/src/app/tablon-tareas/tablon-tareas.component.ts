@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Auth } from 'firebase/auth';
+import { Auth } from '@angular/fire/auth';
+
 import { ConfirmationService } from 'primeng/api';
 import { TareasService } from '../services/tareas.service';
 import { ITarea } from './tarea.interface';
@@ -33,6 +34,7 @@ export class TablonTareasComponent implements OnInit {
   ngOnInit(): void {
     this.tareasSeleccionadas = [];
         this.tareasService.getTareas().subscribe((tareas:ITarea[])=>{
+          console.log(tareas);
           this.tareasDisponibles = tareas;
         })
       }
@@ -60,6 +62,8 @@ async agregarTarea(tarea: ITarea) {
     header: 'OK',
     icon: 'pi pi-check'});
 }
+
+async modificarTarea(tarea: ITarea) {}
 
 findIndex(tarea: ITarea) {
   let index = -1;

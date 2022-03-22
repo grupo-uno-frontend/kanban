@@ -19,8 +19,10 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
 import { FormsModule } from '@angular/forms';
 import { ConfirmationService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
-import FormularioTareasComponent from './formularioTareas/formulario-tareas/formulario-tareas.component';
 import { TablonTareasComponent } from './tablon-tareas/tablon-tareas.component';
+import FormularioTareasComponent from './formularioTareas/formulario-tareas/formulario-tareas.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 @NgModule({
@@ -43,7 +45,8 @@ import { TablonTareasComponent } from './tablon-tareas/tablon-tareas.component';
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth()),
-    DragDropModule
+    DragDropModule,
+    BrowserAnimationsModule
   ],
   providers: [ConfirmationService],
   bootstrap: [AppComponent]

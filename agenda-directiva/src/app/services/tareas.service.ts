@@ -12,8 +12,8 @@ export class TareasService {
   constructor(private firestore: Firestore) { }
   getTareas(): Observable<ITarea[]> {
     const tareas = collection(this.firestore, 'tareas');
-    const realizadas = query(tareas, orderBy('fechaHora', 'asc'), limit(20));//desc
-    return collectionData(realizadas, { idField: 'id' }) as Observable<ITarea[]>;}
+    /* const realizadas = query(tareas, orderBy('fechaHora', 'asc'), limit(20));//desc */
+    return collectionData(tareas, { idField: 'id' }) as Observable<ITarea[]>;}
 
   updateTarea(tarea: ITarea) {
     const tareaActualizar = doc(this.firestore, `tareas/${tarea.id}`);
