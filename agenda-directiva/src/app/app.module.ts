@@ -22,6 +22,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { TablonTareasComponent } from './tablon-tareas/tablon-tareas.component';
 import FormularioTareasComponent from './formularioTareas/formulario-tareas/formulario-tareas.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppRoutingModule } from './app.routing.module';
 
 
 
@@ -31,7 +32,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginComponent,
     TablonTareasComponent,
     MantenimientoUsuariosComponent,
-    FormularioTareasComponent
+    FormularioTareasComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,7 +47,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth()),
     DragDropModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppRoutingModule
   ],
   providers: [ConfirmationService],
   bootstrap: [AppComponent]
