@@ -3,56 +3,68 @@
 <!-- <app-formulario-tareas [nueva]="nueva" [tarea]="tarea" (tareaNueva)="agregarTarea($event)" (tareaModificada)="modificarTarea($event)"></app-formulario-tareas> -->
 <p-button (click)="showDialog()">Nueva tarea</p-button>
 
-    <div class="col-12 md:col-6 drag-column">
-        <div *ngFor="let tarea of tareasDisponibles">
-            <div class="product-item" pDraggable="tarea" (onDragStart)="dragStart($event, tarea)" (onDragEnd)="dragEnd($event)">
-                <div class="image-container">
-                        {{ tarea.nombre }}
-                </div>
-                <div class="product-list-detail">
-                    <h5 class="mb-2">{{tarea.especificacion}}</h5>
-                    <i class="pi pi-tag product-category-icon"></i>
-                    <span class="product-category">{{tarea.estado}}</span>
-                </div>
-                <div class="product-list-action">
-                    <h6 class="mb-2">${{tarea.porcentaje}}</h6>
-                    <span class="'product-badge status-'{{tarea.realizado}}">{{tarea.realizado}}</span>
-                </div>
-            </div>
-        </div>
+<div class="col-12 md:col-6 drag-column">
+  <div *ngFor="let tarea of tareasDisponibles">
+    <div
+      class="product-item"
+      pDraggable="tarea"
+      (onDragStart)="dragStart($event, tarea)"
+      (onDragEnd)="dragEnd($event)"
+    >
+      <div class="image-container">
+        {{ tarea.nombre }}
+      </div>
+      <div class="product-list-detail">
+        <h5 class="mb-2">{{ tarea.especificacion }}</h5>
+        <i class="pi pi-tag product-category-icon"></i>
+        <span class="product-category">{{ tarea.estado }}</span>
+      </div>
+      <div class="product-list-action">
+        <h6 class="mb-2">${{ tarea.porcentaje }}</h6>
+        <span class="'product-badge status-'{{ tarea.realizado }}">{{
+          tarea.realizado
+        }}</span>
+      </div>
     </div>
+  </div>
+</div>
 <!--aqui empieza la tabla-->
-      <div class="col-12 md:col-6 drop-column"  pDraggable="tarea" pDroppable="tarea" (onDrop)="drop($event)">
-        <p-table [value]="tareasSeleccionadas">
-            <ng-template pTemplate="header">
-                <tr>
-                    <th>Nombre</th>
-                    <th>Especificaciones</th>
-                    <th>Estado</th>
-                    <th>Porcentaje</th>
-                    <th>Realizado</th>
-                </tr>
-            </ng-template>
-            <ng-template pTemplate="body" let-tarea>
-                <tr>
-                        <td>{{tarea.nombre}}</td>
-                        <td>{{tarea.especificacion }}</td>
-                        <td>{{tarea.estado}}</td>
-                        <td>{{tarea.porcentaje}}</td>
-                        <td>{{tarea.realizado}}</td>
-                    </tr>
-                </ng-template>
-            </p-table>
-    </div>
-<p-dialog header="Title" [(visible)]="display" [style]="{width: '50vw'}">
+<div
+  class="col-12 md:col-6 drop-column"
+  pDraggable="tarea"
+  pDroppable="tarea"
+  (onDrop)="drop($event)"
+>
+  <p-table [value]="tareasSeleccionadas">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Nombre</th>
+        <th>Especificaciones</th>
+        <th>Estado</th>
+        <th>Porcentaje</th>
+        <th>Realizado</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-tarea>
+      <tr>
+        <td>{{ tarea.nombre }}</td>
+        <td>{{ tarea.especificacion }}</td>
+        <td>{{ tarea.estado }}</td>
+        <td>{{ tarea.porcentaje }}</td>
+        <td>{{ tarea.realizado }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+<p-dialog
+  header="Agregar tarea"
+  [(visible)]="display"
+  [style]="{ width: '50vw' }"
+>
   <app-formulario-tareas
-      [tarea]="tarea"
-      [nueva]="nueva"
-      (tareaNueva)="agregarTareaFirebase($event)"
-      (tareaModificada)="modificarTareaFirebase($event)"
-    ></app-formulario-tareas>
+    [tarea]="tarea"
+    [nueva]="nueva"
+    (tareaNueva)="agregarTareaFirebase($event)"
+    (tareaModificada)="modificarTareaFirebase($event)"
+  ></app-formulario-tareas>
 </p-dialog>
-
-
-
-

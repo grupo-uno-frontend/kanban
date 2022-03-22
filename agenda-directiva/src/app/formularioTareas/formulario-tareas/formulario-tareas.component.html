@@ -1,5 +1,5 @@
-<h2>{{ nueva == true ? "Agregar tarea" : "Modificar tarea" }}</h2>
-<!--<form #f="ngForm" class="grid p-fluid">
+<!-- <h2>{{ nueva == true ? "Agregar tarea" : "Modificar tarea" }}</h2> -->
+<form #f="ngForm" class="grid p-fluid">
   <div class="col-12 md:col-4">
     <span>Nombre</span>
     <input
@@ -66,18 +66,19 @@
   </div>
   <div class="col-12 md:col-4">
     <span for="check"> Realizado </span>
-    <p-checkbox [binary]="true" [(ngModel)]="tarea.realizado" id="check" name="realizado"></p-checkbox>
+    <p-checkbox
+      [binary]="true"
+      [(ngModel)]="tarea.realizado"
+      id="check"
+      name="realizado"
+    ></p-checkbox>
   </div>
   <div class="col-12 md:col-4">
-  <p-button
-    type="submit"
-    (click)="guardarTarea()"
-    [disabled]="f.invalid"
-  >
-    {{ nueva == true ? "Agregar nueva tarea" : "Actualizar" }}
-  </p-button>
-</div>
-</form>-->
+    <p-button type="submit" (click)="guardarTarea()" [disabled]="f.invalid">
+      {{ nueva == true ? "Aceptar" : "Actualizar" }}
+    </p-button>
+  </div>
+</form>
 <p-confirmDialog
   [style]="{ width: '50vw' }"
   [baseZIndex]="10000"
