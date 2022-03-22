@@ -91,7 +91,9 @@ showDialog() {
 
 //DAR FUNCIONALIDAD PARA QUE COJA LAS TAREAS Y LAS AGRUEGUE/MODIFIQUE
 agregarTareaFirebase(tarea: ITarea){
-
+console.log(tarea);
+tarea.usuario = this.usuario.displayName;
+this.tareasService.addTarea(tarea);
 
 }
 modificarTareaFirebase(tarea: ITarea){
