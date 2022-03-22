@@ -48,7 +48,7 @@ import { AppRoutingModule } from './app.routing.module';
     provideAuth(() => getAuth()),
     DragDropModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [ConfirmationService],
   bootstrap: [AppComponent]
