@@ -5,14 +5,16 @@
 
 <p-splitter  class="col-12 md:col-6 drag-column" [style]="{'height': '300px'}" layout="horizontal">
   <ng-template pTemplate>
-    <div *ngFor="let tarea of tareasDisponibles">
     TAREAS DISPONIBLES
+    <div *ngFor="let tarea of tareasDisponibles">
+
     <div
       class="product-item"
       pDraggable="tarea"
       (onDragStart)="dragStart($event, tarea)"
       (onDragEnd)="dragEnd($event)"
     >
+
     <p-card>
       <ng-template pTemplate="header">
           {{ tarea.nombre }}
@@ -39,19 +41,21 @@
   </ng-template>
 <!--aqui empieza la tabla-->
 <ng-template pTemplate>
-TAREAS EN CURSO
+TAREAS FINALIZADAS
   <div
   class="col-12 md:col-6 drop-column"
   pDraggable="tarea"
   pDroppable="tarea"
   (onDrop)="drop($event)"
 >
+<div *ngFor="let tareasF of tareasFinalizadas">
 <p-card>
   <ng-template pTemplate="header">
-      {{ tarea.nombre }}
+      {{ tareasF.nombre }}
   </ng-template>
   Body Content
 </p-card>
+</div>
 </div>
 </ng-template>
   <!-- <p-table [value]="tareasSeleccionadas"> -->
