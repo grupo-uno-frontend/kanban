@@ -4,8 +4,9 @@
 <p-button (click)="showDialog()">Nueva tarea</p-button>
 
 <p-splitter class="col-12 md:col-6 drag-column">
-  <h3>TAREAS EN CURSO</h3>
   <ng-template pTemplate>
+    <h3>TAREAS EN CURSO</h3>
+    <br>
     <div *ngFor="let tarea of tareasDisponibles">
 
     <ng-template
@@ -49,7 +50,7 @@ TAREAS FINALIZADAS
   <!--aqui empieza la tabla-->
 
   <ng-template pTemplate>
-    <h3>TAREAS FINALIZADAS</h3>
+    <h3>TAREAS FINALIZADAS</h3><br>
     <div *ngFor="let tareaF of tareasFinalizadas">
     <div
       class="col-12 md:col-6 drop-column"
