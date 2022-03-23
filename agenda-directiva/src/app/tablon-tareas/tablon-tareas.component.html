@@ -42,14 +42,15 @@ TAREAS FINALIZADAS
 </ng-template>
 =======
   <!--aqui empieza la tabla-->
+
   <ng-template pTemplate>
+    <div *ngFor="let tareaF of tareasFinalizadas">
     <div
       class="col-12 md:col-6 drop-column"
       pDraggable="tarea"
       pDroppable="tarea"
       (onDrop)="drop($event)"
     >
-    <div *ngFor="let tareaF of tareasFinalizadas">
       <h3>TAREAS EN CURSO</h3>
       <p-card>
         <ng-template pTemplate="header">
