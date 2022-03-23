@@ -3,9 +3,8 @@
 <!-- <app-formulario-tareas [nueva]="nueva" [tarea]="tarea" (tareaNueva)="agregarTarea($event)" (tareaModificada)="modificarTarea($event)"></app-formulario-tareas> -->
 <p-button (click)="showDialog()">Nueva tarea</p-button>
 
-<p-splitter  class="col-12 md:col-6 drag-column" [style]="{'height': '300px'}" layout="horizontal">
+<p-splitter class="col-12 md:col-6 drag-column">
   <ng-template pTemplate>
-    TAREAS DISPONIBLES
     <div *ngFor="let tarea of tareasDisponibles">
 
     <div
@@ -23,23 +22,6 @@
   </p-card>
       <!-- <div class="image-container">
         {{ tarea.nombre }}
-      </div>
-      <div class="product-list-detail">
-        <h5 class="mb-2">{{ tarea.especificacion }}</h5>
-        <i class="pi pi-tag product-category-icon"></i>
-        <span class="product-category">{{ tarea.estado }}</span>
-      </div>
-      <div class="product-list-action">
-        <h6 class="mb-2">${{ tarea.porcentaje }}</h6>
-        <span class="'product-badge status-'{{ tarea.realizado }}">{{
-          tarea.realizado
-        }}</span>
-      </div> -->
-    </div>
-  </div>
-
-  </ng-template>
-<!--aqui empieza la tabla-->
 <ng-template pTemplate>
 TAREAS FINALIZADAS
   <div
@@ -58,6 +40,25 @@ TAREAS FINALIZADAS
 </div>
 </div>
 </ng-template>
+=======
+  <!--aqui empieza la tabla-->
+  <ng-template pTemplate>
+    <div
+      class="col-12 md:col-6 drop-column"
+      pDraggable="tarea"
+      pDroppable="tarea"
+      (onDrop)="drop($event)"
+    >
+      <h3>TAREAS EN CURSO</h3>
+      <p-card>
+        <ng-template pTemplate="header">
+          {{ tarea.nombre }}
+        </ng-template>
+        Body Content
+      </p-card>
+    </div>
+  </ng-template>
+>>>>>>> 9f5182b6bcd2995d5fbeae7ec2fc211a14794a67
   <!-- <p-table [value]="tareasSeleccionadas"> -->
 </p-splitter>
 <!--AQUI EMPIEZA LA VENTANA MODAL-->
@@ -73,5 +74,3 @@ TAREAS FINALIZADAS
     (tareaModificada)="modificarTareaFirebase($event)"
   ></app-formulario-tareas>
 </p-dialog>
-
-
