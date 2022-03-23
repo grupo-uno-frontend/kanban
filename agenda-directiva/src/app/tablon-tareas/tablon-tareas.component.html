@@ -49,16 +49,17 @@ TAREAS FINALIZADAS
       pDroppable="tarea"
       (onDrop)="drop($event)"
     >
+    <div *ngFor="let tareaF of tareasFinalizadas">
       <h3>TAREAS EN CURSO</h3>
       <p-card>
         <ng-template pTemplate="header">
-          {{ tarea.nombre }}
+          {{ tareaF.nombre }}
         </ng-template>
         Body Content
       </p-card>
     </div>
+    </div>
   </ng-template>
->>>>>>> 9f5182b6bcd2995d5fbeae7ec2fc211a14794a67
   <!-- <p-table [value]="tareasSeleccionadas"> -->
 </p-splitter>
 <!--AQUI EMPIEZA LA VENTANA MODAL-->
