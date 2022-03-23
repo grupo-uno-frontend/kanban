@@ -3,10 +3,12 @@
 <!-- <app-formulario-tareas [nueva]="nueva" [tarea]="tarea" (tareaNueva)="agregarTarea($event)" (tareaModificada)="modificarTarea($event)"></app-formulario-tareas> -->
 <p-button (click)="showDialog()">Nueva tarea</p-button>
 
-<p-splitter class="col-12 md:col-6 drag-column">
-  <ng-template pTemplate>
-    <h3>TAREAS EN CURSO</h3>
-    <div pDroppable="tarea" (onDrop)="redrop($event)">
+<div class="flex flex-row">
+  <div class="surface-card p-4 shadow-2 border-round w-full lg:w-6">
+    <div class="text-center mb-5">
+      <div class="text-900 text-3xl font-medium mb-3">Tareas en curso</div>
+    </div>
+    <div pDroppable="tarea" (onDrop)="redrop($event)" class="h-full">
       <div *ngFor="let tarea of tareasDisponibles">
         <div
           class="product-item"
@@ -23,15 +25,16 @@
         </div>
       </div>
     </div>
-  </ng-template>
+  </div>
 
   <!--aqui empieza la tabla-->
 
-  <ng-template pTemplate>
-    <div (onDrop)="drop($event)" pDroppable="tarea">
-      <h3>TAREAS FINALIZADAS</h3>
-      <br />
-      <div *ngFor="let tareaF of tareasFinalizadas">
+  <div class="surface-card p-4 shadow-2 border-round w-full lg:w-6">
+    <div class="text-center mb-5">
+      <div class="text-900 text-3xl font-medium mb-3">Tareas finalizadas</div>
+    </div>
+    <div (onDrop)="drop($event)" pDroppable="tarea" class="h-full">
+      <ng-container *ngFor="let tareaF of tareasFinalizadas">
         <div
           class="col-12 md:col-6 drop-column"
           pDraggable="tarea"
@@ -45,11 +48,12 @@
             Body Content
           </p-card>
         </div>
-      </div>
+      </ng-container>
     </div>
-  </ng-template>
-  <!-- <p-table [value]="tareasSeleccionadas"> -->
-</p-splitter>
+    <!-- <p-table [value]="tareasSeleccionadas"> -->
+  </div>
+</div>
+
 <!--AQUI EMPIEZA LA VENTANA MODAL-->
 <p-dialog
   header="Agregar tarea"
