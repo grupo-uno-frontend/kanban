@@ -52,6 +52,7 @@ export class TablonTareasComponent implements OnInit {
           this.tareasFinalizadas = tareas;
         })
       }
+      //De tareas disponibles a tareas finalizadas.
  dragStart(event:any,tarea: ITarea) {
     this.draggedTarea = tarea;
 }
@@ -70,6 +71,28 @@ export class TablonTareasComponent implements OnInit {
 dragEnd(event:any) {
   this.draggedTarea = null;
 }
+
+//de finalizadas a en curso
+redragStart(event:any,tarea: ITarea) {
+  this.draggedTarea = tarea;
+}
+
+redrop(event:any) {
+  if (this.draggedTarea) {
+      /* let draggedTareaIndex = this.findIndex(this.draggedTarea);
+      this.tareasFinalizadas = [...this.tareasFinalizadas, this.draggedTarea];
+      this.tareasDisponibles = this.tareasDisponibles.filter((val,i) => i!=draggedTareaIndex);
+      this.draggedTarea = null; */
+      this.draggedTarea.realizado = false;
+      this.tareasService.updateTarea(this.draggedTarea);
+      this.draggedTarea = null;
+  }
+}
+redragEnd(event:any) {
+this.draggedTarea = null;
+}
+
+
 
 async agregarTarea(tarea: ITarea) {
   tarea.usuario=this.fireAuth.currentUser.email

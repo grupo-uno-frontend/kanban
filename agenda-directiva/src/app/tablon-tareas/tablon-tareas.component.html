@@ -9,11 +9,13 @@
     <br>
     <div *ngFor="let tarea of tareasDisponibles">
 
-    <ng-template
+    <div
       class="product-item"
       pDraggable="tarea"
+      pDroppable="tarea"
       (onDragStart)="dragStart($event, tarea)"
       (onDragEnd)="dragEnd($event)"
+      (onDrop)="redrop($event)"
     >
 
     <p-card>
@@ -22,7 +24,7 @@
       </ng-template>
       Body Content
   </p-card>
-</ng-template>
+</div>
 </div>
 </ng-template>
 
@@ -57,6 +59,8 @@ TAREAS FINALIZADAS
       pDraggable="tarea"
       pDroppable="tarea"
       (onDrop)="drop($event)"
+      (onDragStart)="redragStart($event, tarea)"
+      (onDragEnd)="redragEnd($event)"
     >
 
       <p-card>
