@@ -4,10 +4,11 @@
 <p-button (click)="showDialog()">Nueva tarea</p-button>
 
 <p-splitter class="col-12 md:col-6 drag-column">
+  <h3>TAREAS EN CURSO</h3>
   <ng-template pTemplate>
     <div *ngFor="let tarea of tareasDisponibles">
 
-    <div
+    <ng-template
       class="product-item"
       pDraggable="tarea"
       (onDragStart)="dragStart($event, tarea)"
@@ -20,6 +21,10 @@
       </ng-template>
       Body Content
   </p-card>
+</ng-template>
+</div>
+</ng-template>
+
       <!-- <div class="image-container">
         {{ tarea.nombre }}
 <ng-template pTemplate>
@@ -44,6 +49,7 @@ TAREAS FINALIZADAS
   <!--aqui empieza la tabla-->
 
   <ng-template pTemplate>
+    <h3>TAREAS FINALIZADAS</h3>
     <div *ngFor="let tareaF of tareasFinalizadas">
     <div
       class="col-12 md:col-6 drop-column"
@@ -51,7 +57,7 @@ TAREAS FINALIZADAS
       pDroppable="tarea"
       (onDrop)="drop($event)"
     >
-      <h3>TAREAS EN CURSO</h3>
+
       <p-card>
         <ng-template pTemplate="header">
           {{ tareaF.nombre }}
