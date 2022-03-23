@@ -44,7 +44,6 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     BrowserModule,
     SplitterModule,
     CheckboxModule,
-    DragDropModule,
     InputTextModule,
     ButtonModule,
     ImageModule,
