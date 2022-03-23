@@ -25,6 +25,7 @@ import FormularioTareasComponent from './formularioTareas/formulario-tareas/form
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app.routing.module';
 import {DialogModule} from 'primeng/dialog';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 
 
