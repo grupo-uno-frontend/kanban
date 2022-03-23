@@ -6,7 +6,7 @@
 <p-splitter class="col-12 md:col-6 drag-column">
   <ng-template pTemplate>
     <h3>TAREAS EN CURSO</h3>
-    <div pDroppable="tarea" (onDrop)="redrop($event)">
+    <div pDroppable="ptarea" (onDrop)="redrop($event)">
       <div *ngFor="let tarea of tareasDisponibles">
         <div
           class="product-item"
@@ -34,7 +34,7 @@
       <div *ngFor="let tareaF of tareasFinalizadas">
         <div
           class="col-12 md:col-6 drop-column"
-          pDraggable="tarea"
+          pDraggable="ptarea"
           (onDragStart)="redragStart($event, tarea)"
           (onDragEnd)="redragEnd($event)"
         >
