@@ -65,6 +65,7 @@ export class TablonTareasComponent implements OnInit {
         this.draggedTarea = null; */
         this.draggedTarea.realizado = true;
         this.tareasService.updateTarea(this.draggedTarea);
+        console.log(this.draggedTarea);
         this.draggedTarea = null;
     }
 }
@@ -75,6 +76,7 @@ dragEnd(event:any) {
 //de finalizadas a en curso
 redragStart(event:any,tarea: ITarea) {
   this.draggedTarea = tarea;
+  console.log(this.draggedTarea);
 }
 
 redrop(event:any) {
@@ -85,7 +87,9 @@ redrop(event:any) {
       this.draggedTarea = null; */
       this.draggedTarea.realizado = false;
       this.tareasService.updateTarea(this.draggedTarea);
+      console.log(this.draggedTarea)
       this.draggedTarea = null;
+
   }
 }
 redragEnd(event:any) {
