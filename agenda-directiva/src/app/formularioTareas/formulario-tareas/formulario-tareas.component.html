@@ -78,6 +78,7 @@
       class="text-center"
       type="submit"
       (click)="guardarTarea()"
+      (Click)="reset()"
       [disabled]="f.invalid"
     >
       {{ nueva == true ? "Aceptar" : "Actualizar" }}
