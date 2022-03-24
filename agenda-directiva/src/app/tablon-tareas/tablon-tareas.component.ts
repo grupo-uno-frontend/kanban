@@ -7,6 +7,7 @@ import { TareasService } from '../services/tareas.service';
 import { ITarea } from './tarea.interface';
 
 
+
 @Component({
   selector: 'app-tablon-tareas',
   templateUrl: './tablon-tareas.component.html',
