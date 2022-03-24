@@ -1,13 +1,26 @@
-<p-menubar class="d-flex">
-  <span>{{ usuario?.displayName }}</span>
-  <p-image [src]="usuario?.photoURL" height="40" class="mr-2"></p-image>
-  <button
-    pButton
-    label="Logout"
-    (click)="cerrarSesion()"
-    icon="pi pi-power-off"
-  ></button>
-</p-menubar>
+<div class="card">
+  <div
+    class="flex align-items-center justify-content-end flex-wrap card-container"
+    style="gap: 0.5em"
+  >
+    <span>{{ usuario?.displayName }}</span>
+
+    <img
+      [src]="usuario?.photoURL"
+      height="40"
+      class="border-circle w-auto"
+      style="margin: 0"
+    />
+
+    <button
+      pButton
+      label="Logout"
+      (click)="cerrarSesion()"
+      icon="pi pi-power-off"
+      style="align-self: flex-start"
+    ></button>
+  </div>
+</div>
 
 <h1>Tablón de tareas</h1>
 
