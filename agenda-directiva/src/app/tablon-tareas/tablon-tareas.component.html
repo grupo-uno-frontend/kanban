@@ -3,54 +3,56 @@
 <!-- <app-formulario-tareas [nueva]="nueva" [tarea]="tarea" (tareaNueva)="agregarTarea($event)" (tareaModificada)="modificarTarea($event)"></app-formulario-tareas> -->
 <p-button (click)="showDialog()">Nueva tarea</p-button>
 
-<div class="flex flex-row">
-  <div class="surface-card p-4 shadow-2 border-round w-full lg:w-6">
-    <div class="text-center mb-5">
-      <div class="text-900 text-3xl font-medium mb-3">Tareas en curso</div>
-    </div>
-    <div pDroppable="tarea" (onDrop)="redrop($event)" class="h-full">
-      <div *ngFor="let tarea of tareasDisponibles">
-        <div
-          class="product-item"
-          pDraggable="tarea"
-          (onDragStart)="dragStart($event, tarea)"
-          (onDragEnd)="dragEnd($event)"
-        >
-          <p-card>
-            <ng-template pTemplate="header">
-              {{ tarea.nombre }}
-            </ng-template>
-            Body Content
-          </p-card>
+<div class="my-4">
+  <div class="flex flex-row">
+    <div class="surface-card p-4 shadow-2 border-round w-full lg:w-6">
+      <div class="text-center mb-5">
+        <div class="text-900 text-3xl font-medium mb-3">Tareas en curso</div>
+      </div>
+      <div pDroppable="tarea" (onDrop)="redrop($event)" class="h-full">
+        <div *ngFor="let tarea of tareasDisponibles">
+          <div
+            class="col-12 drop-column"
+            pDraggable="tarea"
+            (onDragStart)="dragStart($event, tarea)"
+            (onDragEnd)="dragEnd($event)"
+          >
+            <p-card>
+              <ng-template pTemplate="header">
+                {{ tarea.nombre }}
+              </ng-template>
+              Body Content
+            </p-card>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!--aqui empieza la tabla-->
+    <!--aqui empieza la tabla-->
 
-  <div class="surface-card p-4 shadow-2 border-round w-full lg:w-6">
-    <div class="text-center mb-5">
-      <div class="text-900 text-3xl font-medium mb-3">Tareas finalizadas</div>
+    <div class="surface-card p-4 shadow-2 border-round w-full lg:w-6 mx-2">
+      <div class="text-center mb-5">
+        <div class="text-900 text-3xl font-medium mb-3">Tareas finalizadas</div>
+      </div>
+      <div (onDrop)="drop($event)" pDroppable="tarea" class="h-full">
+        <ng-container *ngFor="let tareaF of tareasFinalizadas">
+          <div
+            class="col-12 drop-column"
+            pDraggable="tarea"
+            (onDragStart)="redragStart($event, tareaF)"
+            (onDragEnd)="redragEnd($event)"
+          >
+            <p-card>
+              <ng-template pTemplate="header">
+                {{ tareaF.nombre }}
+              </ng-template>
+              Body Content
+            </p-card>
+          </div>
+        </ng-container>
+      </div>
+      <!-- <p-table [value]="tareasSeleccionadas"> -->
     </div>
-    <div (onDrop)="drop($event)" pDroppable="tarea" class="h-full">
-      <ng-container *ngFor="let tareaF of tareasFinalizadas">
-        <div
-          class="col-12 md:col-6 drop-column"
-          pDraggable="tarea"
-          (onDragStart)="redragStart($event, tareaF)"
-          (onDragEnd)="redragEnd($event)"
-        >
-          <p-card>
-            <ng-template pTemplate="header">
-              {{ tareaF.nombre }}
-            </ng-template>
-            Body Content
-          </p-card>
-        </div>
-      </ng-container>
-    </div>
-    <!-- <p-table [value]="tareasSeleccionadas"> -->
   </div>
 </div>
 

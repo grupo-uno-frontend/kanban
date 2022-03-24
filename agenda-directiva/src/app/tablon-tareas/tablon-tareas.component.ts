@@ -17,8 +17,7 @@ export class TablonTareasComponent implements OnInit {
     nombre: '',
     especificacion: '',
     estado: '',
-    porcentaje: 0,
-    realizado: false,
+    realizado: false
   }
 
 
