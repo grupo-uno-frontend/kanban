@@ -53,10 +53,12 @@ export class TablonTareasComponent implements OnInit {
         })
       }
       //De tareas disponibles a tareas finalizadas.
+      //dragStart -> almacenamos la info de la tarea que queremos mover
  dragStart(event:any,tarea: ITarea) {
     this.draggedTarea = tarea;
 }
 
+//el drop -> primero cambiamos el estado de realizado, lo actualizamos y se borran los datos guardados para poder guardar otros. (Otra tarea)
  drop(event:any) {
     if (this.draggedTarea) {
         /* let draggedTareaIndex = this.findIndex(this.draggedTarea);
@@ -69,6 +71,7 @@ export class TablonTareasComponent implements OnInit {
         this.draggedTarea = null;
     }
 }
+//aquí se "formatea" la info guardada en la variable. Uso: soltamos una tarea sin que se guarde en otro contenedor, como si me hubiera equivocado. No se actualiza la tarea pero se deja libre la variable.
 dragEnd(event:any) {
   this.draggedTarea = null;
 }
