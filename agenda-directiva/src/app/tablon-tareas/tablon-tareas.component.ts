@@ -127,8 +127,14 @@ findIndex(tarea: ITarea) {
 }
 
 showDialog() {
-    this.display = true;
-}
+    this.display = true;//Esto saca la ventana modal
+    this.tarea = {//con this.tarea es una tarea vacía para pasarsela al formulario
+      nombre: '',
+      especificacion: '',
+      estado: '',
+      realizado: false
+    }
+  }
 
 //DAR FUNCIONALIDAD PARA QUE COJA LAS TAREAS Y LAS AGRUEGUE/MODIFIQUE
 agregarTareaFirebase(tarea: ITarea){

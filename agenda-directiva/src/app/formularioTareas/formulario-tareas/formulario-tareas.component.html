@@ -77,8 +77,7 @@
     <p-button
       class="text-center"
       type="submit"
-      (click)="guardarTarea()"
-      (Click)="reset()"
+      (click)="guardarTarea(f)"
       [disabled]="f.invalid"
     >
       {{ nueva == true ? "Aceptar" : "Actualizar" }}
@@ -93,3 +92,4 @@
   acceptspan="Aceptar"
 ></p-confirmDialog
 ><!--PAra que aparezca el alerta-->
+

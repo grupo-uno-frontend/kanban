@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, NgForm } from '@angular/forms';
 import { ConfirmationService } from 'primeng/api';
 import { ITarea } from 'src/app/tablon-tareas/tarea.interface';
 
@@ -10,7 +10,7 @@ import { ITarea } from 'src/app/tablon-tareas/tarea.interface';
   styleUrls: ['./formulario-tareas.component.css']
 })
 export default class FormularioTareasComponent implements OnInit {
-  @Input() tarea!: ITarea;
+  @Input() tarea!: ITarea; //ahí estamos pasándole la tarea vacía
   @Input() nueva!: boolean;
   @Output() tareaNueva = new EventEmitter<ITarea>();
   @Output() tareaModificada = new EventEmitter<ITarea>();
@@ -25,17 +25,16 @@ export default class FormularioTareasComponent implements OnInit {
     } }
 
   ngOnInit(): void {}
-  guardarTarea() {
-
+  guardarTarea(f : NgForm) {
+    if(f.valid){
     if (this.nueva) {
 
       this.tareaNueva.emit(this.tarea);
     } else {
       this.tareaModificada.emit(this.tarea);
     }
+    f.reset()
   }
-  reset(){
-    const reset= new FormControl(this.tarea, {initialValueIsDefault: true});
-  
-  }
+}
+
 }

@@ -61,3 +61,13 @@ img {
     width: 100px;
   }
 }
+.amarillo-shadow{
+
+      background: #212121;
+
+}
+:host ::ng-deep .amarillo-shadow.p-card {
+
+      background: #FFF59D;
+
+}
