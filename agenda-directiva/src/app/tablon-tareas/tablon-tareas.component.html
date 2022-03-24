@@ -1,7 +1,12 @@
-<p-menubar>
-  {{ usuario?.displayName}}
-  <img [src]="usuario?.photoURL" height="40" class="mr-2" />
-  <button pButton label="Logout" (click)="cerrarSesion()" icon="pi pi-power-off"></button>
+<p-menubar class="d-flex">
+  <span>{{ usuario?.displayName }}</span>
+  <p-image [src]="usuario?.photoURL" height="40" class="mr-2"></p-image>
+  <button
+    pButton
+    label="Logout"
+    (click)="cerrarSesion()"
+    icon="pi pi-power-off"
+  ></button>
 </p-menubar>
 
 <h1>Tablón de tareas</h1>
@@ -27,7 +32,7 @@
               <ng-template pTemplate="header">
                 {{ tarea.nombre }}
               </ng-template>
-              Especificaciones: {{ tarea.especificacion }} <br>
+              Especificaciones: {{ tarea.especificacion }} <br />
               <!--AQUI TENGO IDEA A VER SI SABEMOS HACERLO-->
               Estado: {{ tarea.estado }}
             </p-card>
@@ -54,7 +59,7 @@
               <ng-template pTemplate="header">
                 {{ tareaF.nombre }}
               </ng-template>
-              Especificaciones: {{ tareaF.especificacion }} <br>
+              Especificaciones: {{ tareaF.especificacion }} <br />
               <!--AQUI TENGO IDEA A VER SI SABEMOS HACERLO-->
               Estado: {{ tareaF.estado }}
             </p-card>
