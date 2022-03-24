@@ -31,20 +31,19 @@
   <div class="flex flex-row">
     <div class="surface-card p-4 shadow-2 border-round w-full lg:w-6">
       <div class="text-center mb-5">
-        <div class="text-900 text-3xl font-medium mb-3" >Tareas en curso</div>
+        <div class="text-900 text-3xl font-medium mb-3">Tareas en curso</div>
       </div>
       <div pDroppable="tarea" (onDrop)="redrop($event)" class="h-full">
-        <div *ngFor="let tarea of tareasDisponibles" >
+        <div *ngFor="let tarea of tareasDisponibles">
           <div
             class="col-12 drop-column"
             pDraggable="tarea"
             (onDragStart)="dragStart($event, tarea)"
             (onDragEnd)="dragEnd($event)"
           >
-            <p-card styleClass="amarillo-shadow"
-            >
+            <p-card styleClass="amarillo-shadow">
               <ng-template pTemplate="header">
-                {{ tarea.nombre }}
+                <h4 class="text-center pt-3 mb-0">{{ tarea.nombre }}</h4>
               </ng-template>
               Especificaciones: {{ tarea.especificacion }} <br />
               <!--AQUI TENGO IDEA A VER SI SABEMOS HACERLO-->
@@ -71,7 +70,7 @@
           >
             <p-card styleClass="amarillo-shadowe">
               <ng-template pTemplate="header">
-                {{ tareaF.nombre }}
+                <h4 class="text-center pt-3 mb-0">{{ tareaF.nombre }}</h4>
               </ng-template>
               Especificaciones: {{ tareaF.especificacion }} <br />
               <!--AQUI TENGO IDEA A VER SI SABEMOS HACERLO-->
@@ -90,8 +89,8 @@
   header="Agregar tarea"
   [(visible)]="display"
   [style]="{ width: '50vw' }"
-><!--cuando el display está true es cunado la ventana emerge/se ve-->
-<!-- con tarea = tarea, le pasamos una tarea vacía al formulario -->
+  ><!--cuando el display está true es cunado la ventana emerge/se ve-->
+  <!-- con tarea = tarea, le pasamos una tarea vacía al formulario -->
   <app-formulario-tareas
     [tarea]="tarea"
     [nueva]="nueva"
