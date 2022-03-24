@@ -1,5 +1,6 @@
 <p-menubar>
-  <img src="assets/showcase/images/primeng.svg" height="40" class="mr-2">
+  {{ usuario?.displayName}}
+  <img [src]="usuario?.photoURL" height="40" class="mr-2" />
   <button pButton label="Logout" (click)="cerrarSesion()" icon="pi pi-power-off"></button>
 </p-menubar>
 
