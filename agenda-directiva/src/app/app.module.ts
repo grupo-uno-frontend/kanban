@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import {DragDropModule} from 'primeng/dragdrop';
 import {CardModule} from 'primeng/card';
 import {SplitterModule} from 'primeng/splitter';
+import {MenubarModule} from 'primeng/menubar';
+
+
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -56,8 +59,10 @@ import {DialogModule} from 'primeng/dialog';
     DragDropModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    SplitterModule
+    SplitterModule,
+    MenubarModule
   ],
+  
   providers: [ConfirmationService],
   bootstrap: [AppComponent]
 })

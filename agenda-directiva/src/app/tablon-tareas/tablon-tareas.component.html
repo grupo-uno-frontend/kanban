@@ -1,3 +1,8 @@
+<p-menubar>
+  <img src="assets/showcase/images/primeng.svg" height="40" class="mr-2">
+  <button pButton label="Logout" icon="pi pi-power-off"></button>
+</p-menubar>
+
 <h1>Tablón de tareas</h1>
 
 <!-- <app-formulario-tareas [nueva]="nueva" [tarea]="tarea" (tareaNueva)="agregarTarea($event)" (tareaModificada)="modificarTarea($event)"></app-formulario-tareas> -->
@@ -21,7 +26,9 @@
               <ng-template pTemplate="header">
                 {{ tarea.nombre }}
               </ng-template>
-              Body Content
+              Especificaciones: {{ tarea.especificacion }} <br>
+              <!--AQUI TENGO IDEA A VER SI SABEMOS HACERLO-->
+              Estado: {{ tarea.estado }}
             </p-card>
           </div>
         </div>
@@ -46,7 +53,9 @@
               <ng-template pTemplate="header">
                 {{ tareaF.nombre }}
               </ng-template>
-              Body Content
+              Especificaciones: {{ tareaF.especificacion }} <br>
+              <!--AQUI TENGO IDEA A VER SI SABEMOS HACERLO-->
+              Estado: {{ tareaF.estado }}
             </p-card>
           </div>
         </ng-container>

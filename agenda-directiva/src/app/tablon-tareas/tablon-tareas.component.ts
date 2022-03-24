@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Auth, User } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 
-import { ConfirmationService } from 'primeng/api';
+import { ConfirmationService, MenuItem } from 'primeng/api';
 import { TareasService } from '../services/tareas.service';
 import { ITarea } from './tarea.interface';
+
 
 @Component({
   selector: 'app-tablon-tareas',
@@ -19,6 +20,7 @@ export class TablonTareasComponent implements OnInit {
     estado: '',
     realizado: false
   }
+  items: MenuItem[];
 
 
   nueva: boolean = true;
@@ -36,6 +38,7 @@ export class TablonTareasComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.usuario = this.fireAuth.currentUser!;
     /* if (!this.usuario) {
       this.router.navigateByUrl('login');
