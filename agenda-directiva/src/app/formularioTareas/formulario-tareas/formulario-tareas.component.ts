@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { ConfirmationService } from 'primeng/api';
 import { ITarea } from 'src/app/tablon-tareas/tarea.interface';
 
@@ -28,10 +29,13 @@ export default class FormularioTareasComponent implements OnInit {
 
     if (this.nueva) {
 
-
-
       this.tareaNueva.emit(this.tarea);
     } else {
       this.tareaModificada.emit(this.tarea);
     }
-  }}
+  }
+  reset(){
+    const reset= new FormControl(this.tarea, {initialValueIsDefault: true});
+  
+  }
+}
