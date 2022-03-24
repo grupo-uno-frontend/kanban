@@ -71,3 +71,9 @@ img {
       background: #FFF59D;
 
 }
+:host ::ng-deep .amarillo-shadowe.p-card {
+
+  background: #AED581;
+
+}
+
