@@ -49,12 +49,22 @@
               Especificaciones: {{ tarea.especificacion }} <br />
               <!--AQUI TENGO IDEA A VER SI SABEMOS HACERLO-->
               Estado: {{ tarea.estado }}
-              <button type="button" (click)="modificarTarea(tarea)">
-                Modififcar
-              </button>
-              <button type="button" (click)="borrarTareaFirebase(tarea)">
-                Borrar
-              </button>
+              <div class="flex justify-content-end" style="gap: 0.5em">
+                <button
+                  (click)="modificarTarea(tarea)"
+                  pButton
+                  type="button"
+                  icon="pi pi-sliders-v"
+                  class="p-button-rounded p-button-warning"
+                ></button>
+                <button
+                  (click)="borrarTareaFirebase(tarea)"
+                  pButton
+                  type="button"
+                  icon="pi pi-ban"
+                  class="p-button-rounded p-button-danger"
+                ></button>
+              </div>
             </p-card>
           </div>
         </div>
