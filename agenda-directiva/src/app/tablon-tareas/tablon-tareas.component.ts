@@ -139,6 +139,8 @@ this.display=false; //para quitar la pantalla modal
 modificarTareaFirebase(tarea: ITarea){
 
 }
-
+cerrarSesion(){
+  
+}
 
 }
