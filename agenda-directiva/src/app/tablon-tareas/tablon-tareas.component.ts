@@ -140,6 +140,12 @@ this.display=false; //para quitar la pantalla modal
 modificarTareaFirebase(tarea: ITarea){
 
 }
+cerrarSesion(){
+  // El método signOut cierra sesión
+  this.fireAuth.signOut();
+  // Después de cerrar sesión, dirigimos al usuario a la pantalla de login
+  this.router.navigateByUrl('/login');
 
+}
 
 }
