@@ -113,7 +113,28 @@ async agregarTarea(tarea: ITarea) {
     icon: 'pi pi-check'});
 }
 
-async modificarTarea(tarea: ITarea) {}
+modificarTarea(tarea: ITarea) {
+  this.nueva = false;
+  this.tarea = tarea;
+    }
+
+async modificarTareaFirebase(tarea: ITarea) {
+      await this.tareasService.updateTarea(tarea);
+      alert(this.tarea.nombre + ' ha sido modificado');
+    }
+
+
+async borrarTarea(tarea: ITarea) {
+  this.tarea = delete.tarea
+
+}
+async eliminarTareaFirebase(tarea: ITarea) {
+  if (confirm(`¿Estás seguro de eliminar a ${tarea.nombre}?`)) {
+    await this.tareasService.deleteTarea(tarea);
+    alert(this.tarea.nombre + ' ha sido eliminado');
+    this.agregarTarea(this.tarea);
+  }
+
 
 findIndex(tarea: ITarea) {
   let index = -1;
