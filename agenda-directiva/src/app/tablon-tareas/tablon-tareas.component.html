@@ -43,13 +43,13 @@
           >
             <p-card styleClass="amarillo-shadow">
               <ng-template pTemplate="header">
-                <h4 class="text-center pt-3 mb-0">{{ tarea.nombre }}</h4>
+                {{ tarea.nombre }}
               </ng-template>
               Especificaciones: {{ tarea.especificacion }} <br />
               <!--AQUI TENGO IDEA A VER SI SABEMOS HACERLO-->
               Estado: {{ tarea.estado }}
-              <button type="button" (click)="modificarTarea(this.tarea)">Modififcar</button>
-              <button type="button" (click)="borrarTarea(this.tarea)">Borrar</button>
+              <button type="button" (click)="modificarTarea(tarea)">Modififcar</button>
+              <button type="button" (click)="borrarTareaFirebase(tarea)">Borrar</button>
             </p-card>
           </div>
         </div>
@@ -71,16 +71,11 @@
             (onDragEnd)="redragEnd($event)"
           >
             <p-card styleClass="amarillo-shadowe">
-<<<<<<< HEAD
               <ng-template
                 pTemplate="header"
                 styleClass="justify-content-center"
               >
                 {{ tareaF.nombre }}
-=======
-              <ng-template pTemplate="header">
-                <h4 class="text-center pt-3 mb-0">{{ tareaF.nombre }}</h4>
->>>>>>> 2459e5458c7072cb149a47cf40a079ec82bc5e86
               </ng-template>
               Especificaciones: {{ tareaF.especificacion }} <br />
               <!--AQUI TENGO IDEA A VER SI SABEMOS HACERLO-->

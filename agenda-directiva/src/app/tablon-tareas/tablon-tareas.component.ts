@@ -34,6 +34,7 @@ export class TablonTareasComponent implements OnInit {
 
   display: boolean = false;
 
+
   constructor(private tareasService: TareasService, private confirmationService: ConfirmationService, private fireAuth: Auth, private router: Router) {
 
   }
@@ -98,6 +99,7 @@ redrop(event:any) {
 
   }
 }
+
 redragEnd(event:any) {
 this.draggedTarea = null;
 }
@@ -116,24 +118,20 @@ async agregarTarea(tarea: ITarea) {
 modificarTarea(tarea: ITarea) {
   this.nueva = false;
   this.tarea = tarea;
+  this.display = true;
     }
 
 async modificarTareaFirebase(tarea: ITarea) {
       await this.tareasService.updateTarea(tarea);
-      alert(this.tarea.nombre + ' ha sido modificado');
+      this.display = false;
     }
 
 
-async borrarTarea(tarea: ITarea) {
-  this.tarea = delete.tarea
-
-}
-async eliminarTareaFirebase(tarea: ITarea) {
+async borrarTareaFirebase(tarea: ITarea) {
   if (confirm(`¿Estás seguro de eliminar a ${tarea.nombre}?`)) {
     await this.tareasService.deleteTarea(tarea);
     alert(this.tarea.nombre + ' ha sido eliminado');
-    this.agregarTarea(this.tarea);
-  }
+  }}
 
 
 findIndex(tarea: ITarea) {
@@ -164,9 +162,7 @@ tarea.usuario = this.usuario.displayName;
 this.tareasService.addTarea(tarea);
 this.display=false; //para quitar la pantalla modal
 }
-modificarTareaFirebase(tarea: ITarea){
 
-}
 cerrarSesion(){
   // El método signOut cierra sesión
   this.fireAuth.signOut();
@@ -176,3 +172,4 @@ cerrarSesion(){
 }
 
 }
+
