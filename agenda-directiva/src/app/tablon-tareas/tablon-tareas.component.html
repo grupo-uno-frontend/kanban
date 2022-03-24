@@ -4,11 +4,9 @@
     style="gap: 0.5em"
   >
     <span>{{ usuario?.displayName }}</span>
-    <p-image
-      [src]="usuario?.photoURL"
-      height="40"
-      class="rounded-circle"
-    ></p-image>
+
+    <img [src]="usuario?.photoURL" height="40" class="border-circle w-auto" />
+
     <button
       pButton
       label="Logout"
