@@ -20,8 +20,7 @@ export default class FormularioTareasComponent implements OnInit {
       nombre: '',
       especificacion: '',
       estado: '',
-      porcentaje: 0,
-      realizado: false,
+      realizado: false
     } }
 
   ngOnInit(): void {}
