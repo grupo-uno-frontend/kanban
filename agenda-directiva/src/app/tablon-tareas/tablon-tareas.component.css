@@ -65,7 +65,7 @@ img {
   background: #212121;
 }
 :host ::ng-deep .amarillo-shadow.p-card {
-  background: #fff59d;
+  background: lightcoral;
 }
 :host ::ng-deep .amarillo-shadowe.p-card {
   background: #aed581;
