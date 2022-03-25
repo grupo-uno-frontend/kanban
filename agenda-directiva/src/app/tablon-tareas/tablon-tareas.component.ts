@@ -43,9 +43,9 @@ export class TablonTareasComponent implements OnInit {
 
   ngOnInit(): void {
     this.usuario = this.fireAuth.currentUser!;
-    /* if (!this.usuario) {
+    if (!this.usuario) {
       this.router.navigateByUrl('login');
-    } */
+    } 
     this.tareasDisponibles = [];
     this.tareasService
       .getTareas(this.usuario.displayName)
