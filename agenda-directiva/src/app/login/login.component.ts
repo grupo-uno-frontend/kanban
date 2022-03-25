@@ -6,18 +6,15 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-
   constructor(private fireAuth: Auth, private router: Router) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   async loginGoogle() {
     await signInWithPopup(this.fireAuth, new GoogleAuthProvider());
     this.router.navigateByUrl('tareas');
   }
-
 }

@@ -1,19 +1,17 @@
 import { Input, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {DragDropModule} from 'primeng/dragdrop';
-import {CardModule} from 'primeng/card';
-import {SplitterModule} from 'primeng/splitter';
-import {MenubarModule} from 'primeng/menubar';
-
-
+import { DragDropModule } from 'primeng/dragdrop';
+import { CardModule } from 'primeng/card';
+import { SplitterModule } from 'primeng/splitter';
+import { MenubarModule } from 'primeng/menubar';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 
-import {CheckboxModule} from 'primeng/checkbox';
-import {InputTextModule} from 'primeng/inputtext';
-import {ButtonModule} from 'primeng/button';
-import {ImageModule} from 'primeng/image';
+import { CheckboxModule } from 'primeng/checkbox';
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
+import { ImageModule } from 'primeng/image';
 
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
@@ -27,12 +25,7 @@ import { TablonTareasComponent } from './tablon-tareas/tablon-tareas.component';
 import FormularioTareasComponent from './formularioTareas/formulario-tareas/formulario-tareas.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app.routing.module';
-import {DialogModule} from 'primeng/dialog';
-
-
-
-
-
+import { DialogModule } from 'primeng/dialog';
 
 @NgModule({
   declarations: [
@@ -60,10 +53,10 @@ import {DialogModule} from 'primeng/dialog';
     BrowserAnimationsModule,
     AppRoutingModule,
     SplitterModule,
-    MenubarModule
+    MenubarModule,
   ],
-  
+
   providers: [ConfirmationService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
