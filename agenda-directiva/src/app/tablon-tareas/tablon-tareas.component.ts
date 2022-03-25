@@ -20,7 +20,7 @@ export class TablonTareasComponent implements OnInit {
     especificacion: '',
     estado: '',
     realizado: false,
-    fecha: new Date,
+    fecha: new Date(),
   }
   items: MenuItem[];
 

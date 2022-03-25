@@ -21,7 +21,8 @@ export default class FormularioTareasComponent implements OnInit {
       nombre: '',
       especificacion: '',
       estado: '',
-      realizado: false
+      realizado: false,
+      fecha: new Date()
     } }
 
   ngOnInit(): void {}
