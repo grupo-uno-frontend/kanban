@@ -98,6 +98,22 @@
               Especificaciones: {{ tareaF.especificacion }} <br />
               <!--AQUI TENGO IDEA A VER SI SABEMOS HACERLO-->
               Estado: {{ tareaF.estado }}
+              <div class="flex justify-content-end" style="gap: 0.5em">
+                <button
+                  (click)="modificarTarea(tarea)"
+                  pButton
+                  type="button"
+                  icon="pi pi-sliders-v"
+                  class="p-button-rounded p-button-warning"
+                ></button>
+                <button
+                  (click)="borrarTareaFirebase(tarea)"
+                  pButton
+                  type="button"
+                  icon="pi pi-ban"
+                  class="p-button-rounded p-button-danger"
+                ></button>
+              </div>
             </p-card>
           </div>
         </ng-container>
@@ -108,10 +124,7 @@
 </div>
 
 <!--AQUI EMPIEZA LA VENTANA MODAL-->
-<p-dialog
-  header="Agregar tarea"
-  [(visible)]="display"
-  [style]="{ width: '50vw' }"
+<p-dialog [header]="titulo" [(visible)]="display" [style]="{ width: '50vw' }"
   ><!--cuando el display está true es cunado la ventana emerge/se ve-->
   <!-- con tarea = tarea, le pasamos una tarea vacía al formulario -->
   <app-formulario-tareas
@@ -121,3 +134,9 @@
     (tareaModificada)="modificarTareaFirebase($event)"
   ></app-formulario-tareas>
 </p-dialog>
+
+<p-confirmDialog
+  header="Eliminar"
+  icon="pi pi-exclamation-triangle"
+  key="eliminar"
+></p-confirmDialog>

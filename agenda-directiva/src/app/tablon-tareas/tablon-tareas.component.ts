@@ -34,6 +34,8 @@ export class TablonTareasComponent implements OnInit {
 
   display: boolean = false;
 
+  titulo: string = '';
+
 
   constructor(private tareasService: TareasService, private confirmationService: ConfirmationService, private fireAuth: Auth, private router: Router) {
 
@@ -119,6 +121,7 @@ modificarTarea(tarea: ITarea) {
   this.nueva = false;
   this.tarea = tarea;
   this.display = true;
+  this.titulo = 'Modificar tarea';
     }
 
 async modificarTareaFirebase(tarea: ITarea) {
@@ -128,10 +131,15 @@ async modificarTareaFirebase(tarea: ITarea) {
 
 
 async borrarTareaFirebase(tarea: ITarea) {
-  if (confirm(`¿Estás seguro de eliminar a ${tarea.nombre}?`)) {
-    await this.tareasService.deleteTarea(tarea);
-    alert(this.tarea.nombre + ' ha sido eliminado');
-  }}
+  this.confirmationService.confirm({
+    message: '¿Estas seguro de querer eliminar la tarea ' + tarea.nombre + '?',
+    acceptLabel: 'Si',
+    key: 'eliminar',
+    accept: async() => {
+      await this.tareasService.deleteTarea(tarea);
+    }
+  });
+}
 
 
 findIndex(tarea: ITarea) {
@@ -147,6 +155,8 @@ findIndex(tarea: ITarea) {
 
 showDialog() {
     this.display = true;//Esto saca la ventana modal
+    this.nueva = true;
+    this.titulo = 'Nueva tarea';
     this.tarea = {//con this.tarea es una tarea vacía para pasarsela al formulario
       nombre: '',
       especificacion: '',
