@@ -99,7 +99,7 @@
               Especificaciones: {{ tareaF.especificacion }} <br />
               <!--AQUI TENGO IDEA A VER SI SABEMOS HACERLO-->
               Estado: {{ tareaF.estado }} <br />
-              Fecha: {{tarea.fecha.seconds*1000 | date: 'dd/MM/yyyy HH:mm'}}
+              Fecha: {{tareaF.fecha.seconds*1000 | date: 'dd/MM/yyyy HH:mm'}}
               <div class="flex justify-content-end" style="gap: 0.5em">
                 <button
                   (click)="modificarTarea(tarea)"
