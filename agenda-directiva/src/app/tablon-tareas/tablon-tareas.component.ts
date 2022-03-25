@@ -19,7 +19,8 @@ export class TablonTareasComponent implements OnInit {
     nombre: '',
     especificacion: '',
     estado: '',
-    realizado: false
+    realizado: false,
+    fecha: new Date,
   }
   items: MenuItem[];
 
@@ -161,7 +162,8 @@ showDialog() {
       nombre: '',
       especificacion: '',
       estado: '',
-      realizado: false
+      realizado: false,
+      fecha: new Date,
     }
   }
 

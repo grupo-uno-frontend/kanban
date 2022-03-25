@@ -6,4 +6,5 @@ export interface ITarea {
   estado: string;
   realizado: boolean;
   usuario?: string;
+  fecha: Date;
 }

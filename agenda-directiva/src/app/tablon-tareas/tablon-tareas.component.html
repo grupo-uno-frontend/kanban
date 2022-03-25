@@ -51,6 +51,7 @@
               Especificaciones: {{ tarea.especificacion }} <br />
               <!--AQUI TENGO IDEA A VER SI SABEMOS HACERLO-->
               Estado: {{ tarea.estado }}
+              Fecha: {{tarea.fecha | date: 'dd/MM/yyyy'}}
               <div class="flex justify-content-end" style="gap: 0.5em">
                 <button
                   (click)="modificarTarea(tarea)"
