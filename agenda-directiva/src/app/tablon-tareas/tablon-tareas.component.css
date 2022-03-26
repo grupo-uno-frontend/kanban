@@ -61,15 +61,13 @@ img {
     width: 100px;
   }
 }
-.amarillo-shadow {
-  background: #212121;
-}
-:host ::ng-deep .amarillo-shadow.p-card {
+
+#ul-left {
   background: lightcoral;
+  border-radius: 6px;
 }
-:host ::ng-deep .amarillo-shadowe.p-card {
+
+#ul-right {
   background: #aed581;
-}
-:host ::ng-deep .text-center.p-card {
-  text-align: center;
+  border-radius: 6px;
 }

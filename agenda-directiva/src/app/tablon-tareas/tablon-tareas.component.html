@@ -24,101 +24,119 @@
 
 <hr />
 
-<h1>Tablón de tareas</h1>
+<!-- Block -->
 
-<!-- <app-formulario-tareas [nueva]="nueva" [tarea]="tarea" (tareaNueva)="agregarTarea($event)" (tareaModificada)="modificarTarea($event)"></app-formulario-tareas> -->
-<p-button (click)="showDialog()">Nueva tarea</p-button>
+<div class="surface-ground">
+  <div class="text-900 font-bold text-3xl m-3 text-center">
+    Tablon de tareas
+  </div>
+  <div class="text-center mb-2">
+    <p-button (click)="showDialog()">Nueva tarea</p-button>
+  </div>
 
-<div class="my-4">
-  <div class="flex flex-row">
-    <div class="surface-card p-4 shadow-2 border-round w-full lg:w-6">
-      <div class="text-center mb-4">
-        <div class="text-900 text-3xl font-medium">Tareas en curso</div>
-      </div>
-      <hr />
-      <div pDroppable="tarea" (onDrop)="redrop($event)" class="h-full">
-        <div *ngFor="let tarea of tareasDisponibles">
-          <div
-            class="col-12 drop-column"
+  <div class="grid">
+    <div class="col-12 lg:col-6" pDroppable="tarea" (onDrop)="redrop($event)">
+      <div class="p-3">
+        <div class="text-900 font-bold text-xl mb-2 text-center">
+          Tareas en curso
+        </div>
+        <div
+          class="shadow-2 p-3 mb-3 h-full flex flex-column surface-card"
+          style="border-radius: 6px"
+          *ngFor="let tarea of tareasDisponibles"
+        >
+          <ul
+            class="list-none p-3 m-1 flex-grow-1"
             pDraggable="tarea"
             (onDragStart)="dragStart($event, tarea)"
             (onDragEnd)="dragEnd($event)"
+            id="ul-left"
           >
-            <p-card styleClass="amarillo-shadow">
-              <ng-template pTemplate="header">
-                <h4 class="text-center m-0 pt-2">{{ tarea.nombre }}</h4>
-              </ng-template>
-              Especificaciones: {{ tarea.especificacion }} <br />
-              Fecha: {{ tarea.fecha.seconds * 1000 | date: "dd/MM/yyyy HH:mm" }}
-              <div class="flex justify-content-end" style="gap: 0.5em">
-                <button
-                  (click)="modificarTarea(tarea)"
-                  pButton
-                  type="button"
-                  icon="pi pi-sliders-v"
-                  class="p-button-rounded p-button-warning"
-                ></button>
-                <button
-                  (click)="borrarTareaFirebase(tarea)"
-                  pButton
-                  type="button"
-                  icon="pi pi-ban"
-                  class="p-button-rounded p-button-danger"
-                ></button>
-              </div>
-            </p-card>
-          </div>
+            <li class="flex align-items-center justify-content-center m-3">
+              <span class="text-900 font-bold text-l">{{ tarea.nombre }}</span>
+            </li>
+            <li class="flex align-items-center mb-3">
+              <span>Especificaciones: {{ tarea.especificacion }}</span>
+            </li>
+            <li class="flex align-items-center mb-3">
+              <span
+                >Fecha:
+                {{
+                  tarea.fecha.seconds * 1000 | date: "dd/MM/yyyy HH:mm"
+                }}</span
+              >
+            </li>
+            <div class="flex justify-content-end" style="gap: 0.5em">
+              <button
+                (click)="modificarTarea(tarea)"
+                pButton
+                type="button"
+                icon="pi pi-sliders-v"
+                class="p-button-rounded p-button-warning"
+              ></button>
+              <button
+                (click)="borrarTareaFirebase(tarea)"
+                pButton
+                type="button"
+                icon="pi pi-ban"
+                class="p-button-rounded p-button-danger"
+              ></button>
+            </div>
+          </ul>
         </div>
       </div>
     </div>
 
-    <!--aqui empieza la tabla-->
-
-    <div class="surface-card p-4 shadow-2 border-round w-full lg:w-6 mx-2">
-      <div class="text-center mb-4">
-        <div class="text-900 text-3xl font-medium">Tareas finalizadas</div>
-      </div>
-      <hr />
-      <div (onDrop)="drop($event)" pDroppable="tarea" class="h-full">
-        <ng-container *ngFor="let tareaF of tareasFinalizadas">
-          <div
-            class="col-12 drop-column"
+    <div class="col-12 lg:col-6" pDroppable="tarea" (onDrop)="drop($event)">
+      <div class="p-3">
+        <div class="text-900 font-bold text-xl mb-2 text-center">
+          Tareas finalizadas
+        </div>
+        <div
+          class="shadow-2 p-3 mb-3 h-full flex flex-column surface-card"
+          style="border-radius: 6px"
+          *ngFor="let tareaF of tareasFinalizadas"
+        >
+          <ul
+            class="list-none p-3 m-1 flex-grow-1"
             pDraggable="tarea"
             (onDragStart)="redragStart($event, tareaF)"
             (onDragEnd)="redragEnd($event)"
+            id="ul-right"
           >
-            <p-card styleClass="amarillo-shadowe">
-              <ng-template
-                pTemplate="header"
-                styleClass="justify-content-center"
+            <li class="flex align-items-center justify-content-center m-3">
+              <span class="text-900 font-bold text-l">{{ tareaF.nombre }}</span>
+            </li>
+            <li class="flex align-items-center mb-3">
+              <span>Especificaciones: {{ tareaF.especificacion }}</span>
+            </li>
+            <li class="flex align-items-center mb-3">
+              <span
+                >Fecha:
+                {{
+                  tareaF.fecha.seconds * 1000 | date: "dd/MM/yyyy HH:mm"
+                }}</span
               >
-                <h4 class="text-center m-0 pt-2">{{ tareaF.nombre }}</h4>
-              </ng-template>
-              Especificaciones: {{ tareaF.especificacion }} <br />
-              <!--AQUI TENGO IDEA A VER SI SABEMOS HACERLO-->
-              Fecha:
-              {{ tareaF.fecha.seconds * 1000 | date: "dd/MM/yyyy HH:mm" }}
-              <div class="flex justify-content-end" style="gap: 0.5em">
-                <button
-                  (click)="modificarTarea(tarea)"
-                  pButton
-                  type="button"
-                  icon="pi pi-sliders-v"
-                  class="p-button-rounded p-button-warning"
-                ></button>
-                <button
-                  (click)="borrarTareaFirebase(tarea)"
-                  pButton
-                  type="button"
-                  icon="pi pi-ban"
-                  class="p-button-rounded p-button-danger"
-                ></button>
-              </div>
-            </p-card>
-          </div>
-        </ng-container>
+            </li>
+            <div class="flex justify-content-end" style="gap: 0.5em">
+              <button
+                (click)="modificarTarea(tareaF)"
+                pButton
+                type="button"
+                icon="pi pi-sliders-v"
+                class="p-button-rounded p-button-warning"
+              ></button>
+              <button
+                (click)="borrarTareaFirebase(tareaF)"
+                pButton
+                type="button"
+                icon="pi pi-ban"
+                class="p-button-rounded p-button-danger"
+              ></button>
+            </div>
+          </ul>
+        </div>
       </div>
-      <!-- <p-table [value]="tareasSeleccionadas"> -->
     </div>
   </div>
 </div>
