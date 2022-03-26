@@ -6,3 +6,8 @@
   font-size: small;
   margin-left: 0 !important;
 }
+
+#botonAceptar {
+  display: flex;
+  justify-content: center;
+}
